@@ -1,63 +1,48 @@
 [submodule "origins/validator"]
-	path = origins/validator
-	url = https://github.com/itplr-kosit/validator.git
-
+path = origins/validator
+url = https://github.com/itplr-kosit/validator.git
 [submodule "origins/validator-configuration-xrechnung"]
-	path = origins/validator-configuration-xrechnung
-	url = https://github.com/itplr-kosit/validator-configuration-xrechnung.git
-
+path = origins/validator-configuration-xrechnung
+url = https://github.com/itplr-kosit/validator-configuration-xrechnung.git
 [submodule "origins/eInvoicing-EN16931"]
-	path = origins/eInvoicing-EN16931
-	url = https://github.com/ConnectingEurope/eInvoicing-EN16931.git
-
+path = origins/eInvoicing-EN16931
+url = https://github.com/ConnectingEurope/eInvoicing-EN16931.git
 [submodule "origins/e-invoice-eu"]
-	path = origins/e-invoice-eu
-	url = https://github.com/gflohr/e-invoice-eu.git
-
+path = origins/e-invoice-eu
+url = https://github.com/gflohr/e-invoice-eu.git
 [submodule "origins/factur-x"]
-	path = origins/factur-x
-	url = https://github.com/akretion/factur-x.git
-
+path = origins/factur-x
+url = https://github.com/akretion/factur-x.git
 [submodule "origins/eu_einvoice"]
-	path = origins/eu_einvoice
-	url = https://github.com/alyf-de/eu_einvoice.git
-
+path = origins/eu_einvoice
+url = https://github.com/alyf-de/eu_einvoice.git
 [submodule "origins/xrechnungs-generator"]
-	path = origins/xrechnungs-generator
-	url = https://github.com/xSentry/xrechnungs-generator.git
-
+path = origins/xrechnungs-generator
+url = https://github.com/xSentry/xrechnungs-generator.git
 [submodule "origins/en16931-visualization"]
-	path = origins/en16931-visualization
-	url = https://github.com/phax/en16931-visualization.git
-
+path = origins/en16931-visualization
+url = https://github.com/phax/en16931-visualization.git
 [submodule "origins/e-invoice"]
-	path = origins/e-invoice
-	url = https://github.com/klst-de/e-invoice.git
-
+path = origins/e-invoice
+url = https://github.com/klst-de/e-invoice.git
 [submodule "origins/mustangproject"]
-	path = origins/mustangproject
-	url = https://github.com/ZUGFeRD/mustangproject.git
-
+path = origins/mustangproject
+url = https://github.com/ZUGFeRD/mustangproject.git
 [submodule "origins/facturx"]
-	path = origins/facturx
-	url = https://github.com/Securibox/facturx.git
-
+path = origins/facturx
+url = https://github.com/Securibox/facturx.git
 [submodule "origins/zugferd"]
-	path = origins/zugferd
-	url = https://github.com/horstoeko/zugferd.git
-
+path = origins/zugferd
+url = https://github.com/horstoeko/zugferd.git
 [submodule "origins/e-invoicing"]
-	path = origins/e-invoicing
-	url = https://github.com/easybill/e-invoicing.git
-
+path = origins/e-invoicing
+url = https://github.com/easybill/e-invoicing.git
 [submodule "origins/einvoicing"]
-	path = origins/einvoicing
-	url = https://github.com/josemmo/einvoicing.git
-
-[submodule "origins/e-invoice-validator-easybill"]
-	path = origins/e-invoice-validator-easybill
-	url = https://github.com/easybill/e-invoice-validator.git
-
+path = origins/einvoicing
+url = https://github.com/josemmo/einvoicing.git
+[submodule "origins/e-invoice-validator"]
+path = origins/e-invoice-validator
+url = https://github.com/easybill/e-invoice-validator.git
 [submodule "origins/e-invoice-validator-backoffice"]
-	path = origins/e-invoice-validator-backoffice
-	url = https://github.com/backoffice-plus/e-invoice-validator.git
+path = origins/e-invoice-validator-backoffice
+url = https://github.com/backoffice-plus/e-invoice-validator.git

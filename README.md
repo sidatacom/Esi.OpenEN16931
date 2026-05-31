@@ -116,7 +116,13 @@ git submodule update --init --recursive
 | [e-invoicing](https://github.com/easybill/e-invoicing) | easybill | PHP library for generating XRechnung and ZUGFeRD invoices |
 | [einvoicing](https://github.com/josemmo/einvoicing) | josemmo | PHP library for creating and parsing EN 16931-compliant invoices |
 | [e-invoice-validator](https://github.com/easybill/e-invoice-validator) | easybill | PHP e-invoice validator using KoSIT validator under the hood |
-| [e-invoice-validator](https://github.com/backoffice-plus/e-invoice-validator) | backoffice-plus | JavaScript/Node.js e-invoice validator for XRechnung and EN 16931 |
+| [e-invoice-validator-backoffice](https://github.com/backoffice-plus/e-invoice-validator) | backoffice-plus | JavaScript/Node.js e-invoice validator for XRechnung and EN 16931 |
+
+### Extended ecosystem catalog (100 projects)
+
+For the full extended 100-project ecosystem index, see:
+
+- [`/docs/github-open-source-e-invoicing-catalog.md`](docs/github-open-source-e-invoicing-catalog.md)
 
 ---
 

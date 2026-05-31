@@ -1,0 +1,111 @@
+# Comprehensive GitHub Open-Source European E-Invoicing Projects (Top 100)
+
+This catalog integrates the 100-project master list provided in task discussion and is maintained as an extended ecosystem index.
+
+## Scope
+
+- This file is a **catalog/index** of relevant projects.
+- Only repositories listed in `/tmp/workspace/sidatacom/Esi.OpenEN16931/.gitmodules` are tracked as live `origins/` submodules.
+
+## Master list (1-100)
+
+1. ZUGFeRD/mustangproject
+2. horstoeko/zugferd
+3. stephanstapel/ZUGFeRD-csharp
+4. ConnectingEurope/eInvoicing-EN16931
+5. phax/phase4
+6. phax/phoss-smp
+7. gflohr/e-invoice-eu
+8. josemmo/einvoicing
+9. pretix/python-drafthorse
+10. jcthiele/OpenXRechnungToolbox
+11. itplr-kosit/validator
+12. atgp/factur-x
+13. phax/ph-ubl
+14. num-num/ubl-invoice
+15. itplr-kosit/xrechnung-visualization
+16. phax/phase2
+17. itplr-kosit/validator-configuration-xrechnung
+18. easybill/zugferd-php
+19. OpenIndex/ZUGFeRD-Manager
+20. itplr-kosit/xrechnung-testsuite
+21. tiehfood/xpferd
+22. jslno/node-zugferd
+23. ZUGFeRD/corpus
+24. itplr-kosit/xrechnung-schematron
+25. phax/phive
+26. phax/phive-rules
+27. phax/peppol-commons
+28. OxalisCommunity/oxalis
+29. OxalisCommunity/oxalis-ng
+30. horstoeko/zugferd-laravel
+31. phax/phoss-directory
+32. horstoeko/zugferdvisualizer
+33. ZUGFeRD/ZUV
+34. LandrixSoftware/XRechnung-for-Delphi
+35. recommand/recommand-peppol
+36. phax/en16931-cii2ubl
+37. konik-io/konik
+38. ZUGFeRD/quba-viewer
+39. bitbetterde/paperless-ngx-erechnung
+40. zfutura/pycheval
+41. esvit/einvoicing
+42. digineo/xrechnung
+43. horstoeko/zugferdublbridge
+44. drbrnn/XFakturist
+45. backoffice-plus/e-invoice-validator
+46. stafyniaksacha/facturx
+47. klst-de/e-invoice
+48. easybill/e-invoicing
+49. lka/excel2zugferd
+50. speedata/einvoice
+51. SimonWaldherr/InvoiceInspector
+52. LandrixSoftware/validator-configuration-zugferd
+53. Tiime-Software/Factur-X
+54. kyr0/easy-erechnung
+55. koozala/pacioli
+56. horstoeko/zugferdmail
+57. itplr-kosit/validator-configuration-bis
+58. austriapro/ebinterface-standards
+59. austriapro/ebinterface-ubl-mapping
+60. austriapro/ebinterface-xrechnung-mapping
+61. jcthiele/xrechnung-visualization-codelist-resolve
+62. markusbegerow/zugpferd-xrechnung-peppol-generator
+63. horstoeko/invoicesuite
+64. InvoiceXML/facturx-api-examples
+65. AlexZeitler/zugpferd
+66. Docentric/docentric-e-invoice-validator
+67. facturx-engine/facturx-engine
+68. armin11/xrechnung_light
+69. Youniwemi/digital-invoice
+70. svanteschubert/Saxon-HE-enhanced-accuracy
+71. CenPC434/java-tools
+72. LandrixSoftware/ZUGFeRD-for-Delphi
+73. BartVertongen/Peppol.NETCoreLib
+74. BartVertongen/UBL21.NETCoreLib
+75. holodeck-b2b/Holodeck-SMP
+76. OxalisCommunity/vefa-peppol
+77. horstoeko/ubl
+78. Selia-AI/peppol-bis-3-typescript
+79. vartur/facturelibre
+80. pikaju/js-e-invoice-codes
+81. BSchneppe/einvoice-rs
+82. hydrogen602/zugferd-code-lists
+83. valitoolorg/zebra
+84. easybill/en16931-validator
+85. easybill/peppol-bis-billing-validator
+86. easybill/e-invoice-validator
+87. VartikaG02/en16931-ubl2cii
+88. phax/en16931-registry
+89. itext/i7n-pdfinvoice
+90. billingcat/crm
+91. microscaler/rerp
+92. NikolaiMe/factur-x-kit
+93. Mavengence/einvoice-mcp
+94. ipax77/pax.XRechnung.NET
+95. LASTRADA-Software/XRechnung
+96. inbridgeio/open-invoice-format
+97. ZUGFeRD/einvoice-anonymizer
+98. ZUGFeRD/REST-Converter
+99. mahdiabderraouf/facturx-php
+100. stannapp/factur-x-php

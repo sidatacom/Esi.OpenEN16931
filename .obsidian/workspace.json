@@ -1,0 +1,202 @@
+{
+  "main": {
+    "id": "83981e7a40040a86",
+    "type": "split",
+    "children": [
+      {
+        "id": "dcaf50ae9d0b44c0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "daffada5cc9a2c48",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Neuer Tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5ae873c4cf2118d9",
+    "type": "split",
+    "children": [
+      {
+        "id": "1c2f3a3979fed715",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "35e99423313403ad",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Dateiexplorer"
+            }
+          },
+          {
+            "id": "47936890293b821b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Suchen"
+            }
+          },
+          {
+            "id": "6477e1ec84b729c6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Lesezeichen"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8af3c73f0d319692",
+    "type": "split",
+    "children": [
+      {
+        "id": "d51592cc788656e3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0f7d33c7828b38ec",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/validation/ownership_check.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Rückverweise auf ownership_check"
+            }
+          },
+          {
+            "id": "486ac8d9ef8c0670",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/validation/ownership_check.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Ausgehende Links von ownership_check öffnen"
+            }
+          },
+          {
+            "id": "b8231de8432bb22e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "5d9a866ea6bd52c5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Alle Eigenschaften"
+            }
+          },
+          {
+            "id": "50c91ffbe4a12278",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/validation/ownership_check.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Gliederung von ownership_check"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Schnellauswahl öffnen": false,
+      "graph:Graph-Ansicht öffnen": false,
+      "canvas:Neuen Canvas erstellen": false,
+      "daily-notes:Heutige Notiz öffnen": false,
+      "templates:Vorlage einfügen": false,
+      "command-palette:Befehlspalette öffnen": false,
+      "bases:Neue Base erstellen": false
+    }
+  },
+  "active": "35e99423313403ad",
+  "lastOpenFiles": [
+    "docs/validation/mapping_rules_enriched.md",
+    "docs/validation/mapping_rules.md",
+    "docs/validation/mapping_evidence.md",
+    "docs/validation/mapping_authority.md",
+    "README.md",
+    "docs/validation/mapping.md",
+    "docs/validation/ownership_check.md",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET.tests/bin/Debug/net10.0",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET.tests/bin/Debug",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET.tests/bin",
+    "origins/koozala/pacioli/src/Pacioli.Pdf/obj/Debug/netstandard2.1/Pacioli.Pdf.csproj.AssemblyReference.cache",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET/obj/Debug/net10.0/refint",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET/obj/Debug/net10.0/ref",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET/obj/Debug/net10.0/pax.XRechnung.NET.GlobalUsings.g.cs",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET/obj/Debug/net10.0/pax.XRechnung.NET.GeneratedMSBuildEditorConfig.editorconfig",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET/obj/Debug/net10.0/pax.XRechnung.NET.csproj.AssemblyReference.cache",
+    "origins/ipax77/pax.XRechnung.NET/src/pax.XRechnung.NET/obj/Debug/net10.0/pax.XRechnung.NET.assets.cache"
+  ]
+}

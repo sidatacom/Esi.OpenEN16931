@@ -1,0 +1,2139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>s2industries.ZUGFeRD</name>
+    </assembly>
+    <members>
+        <member name="P:Esi.OpenEN16931.BaseReferencedDocument.ID">
+            <summary>
+            Bestellnummer / Lieferscheinummer
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.BaseReferencedDocument.IssueDateTime">
+            <summary>
+            Bestelldatum / Lieferdatum
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ContentCodes.EEV">
+            <summary>
+             Die Ware bleibt bis zur vollständigen Bezahlung
+             unser Eigentum. 
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ContentCodes.WEV">
+            <summary>
+            Die Ware bleibt bis zur vollständigen Bezahlung
+            aller Forderungen unser Eigentum. 
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ContentCodes.VEV">
+            <summary>
+            Die Ware bleibt bis zur vollständigen Bezahlung
+            unser Eigentum. Dies gilt auch im Falle der
+            Weiterveräußerung oder -verarbeitung der Ware.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ContentCodes.ST1">
+            <summary>
+            Es ergeben sich Entgeltminderungen auf Grund von
+            Rabatt- und Bonusvereinbarungen. 
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ContentCodes.ST2">
+            <summary>
+            Entgeltminderungen ergeben sich aus unseren
+            aktuellen Rahmen- und Konditionsvereinbarungen. 
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ContentCodes.ST3">
+            <summary>
+            Es bestehen Rabatt- oder Bonusvereinbarungen.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Esi.OpenEN16931.CountryCodes" -->
+        <member name="F:Esi.OpenEN16931.CountryCodes.AF">
+            <summary>
+            AFGHANISTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AX">
+            <summary>
+            ÅLAND ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AL">
+            <summary>
+            ALBANIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.DZ">
+            <summary>
+            ALGERIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AS">
+            <summary>
+            AMERICAN SAMOA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AD">
+            <summary>
+            ANDORRA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AO">
+            <summary>
+            ANGOLA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AI">
+            <summary>
+            ANGUILLA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AQ">
+            <summary>
+            ANTARCTICA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AG">
+            <summary>
+            ANTIGUA AND BARBUDA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AR">
+            <summary>
+            ARGENTINA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AM">
+            <summary>
+            ARMENIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AW">
+            <summary>
+            ARUBA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AU">
+            <summary>
+            AUSTRALIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AT">
+            <summary>
+            AUSTRIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AZ">
+            <summary>
+            AZERBAIJAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BS">
+            <summary>
+            BAHAMAS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BH">
+            <summary>
+            BAHRAIN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BD">
+            <summary>
+            BANGLADESH
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BB">
+            <summary>
+            BARBADOS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BY">
+            <summary>
+            BELARUS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BE">
+            <summary>
+            BELGIUM
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BZ">
+            <summary>
+            BELIZE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BJ">
+            <summary>
+            BENIN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BM">
+            <summary>
+            BERMUDA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BT">
+            <summary>
+            BHUTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BO">
+            <summary>
+            BOLIVIA, PLURINATIONAL STATE OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BQ">
+            <summary>
+            BONAIRE, SINT EUSTATIUS AND SABA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BA">
+            <summary>
+            BOSNIA AND HERZEGOVINA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BW">
+            <summary>
+            BOTSWANA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BV">
+            <summary>
+            BOUVET ISLAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BR">
+            <summary>
+            BRAZIL
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IO">
+            <summary>
+            BRITISH INDIAN OCEAN TERRITORY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BN">
+            <summary>
+            BRUNEI DARUSSALAM
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BG">
+            <summary>
+            BULGARIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BF">
+            <summary>
+            BURKINA FASO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BI">
+            <summary>
+            BURUNDI
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KH">
+            <summary>
+            CAMBODIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CM">
+            <summary>
+            CAMEROON
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CA">
+            <summary>
+            CANADA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CV">
+            <summary>
+            CAPE VERDE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KY">
+            <summary>
+            CAYMAN ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CF">
+            <summary>
+            CENTRAL AFRICAN REPUBLIC
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TD">
+            <summary>
+            CHAD
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CL">
+            <summary>
+            CHILE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CN">
+            <summary>
+            CHINA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CX">
+            <summary>
+            CHRISTMAS ISLAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CC">
+            <summary>
+            COCOS (KEELING) ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CO">
+            <summary>
+            COLOMBIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KM">
+            <summary>
+            COMOROS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CG">
+            <summary>
+            CONGO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CD">
+            <summary>
+            CONGO, THE DEMOCRATIC REPUBLIC OF THE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CK">
+            <summary>
+            COOK ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CR">
+            <summary>
+            COSTA RICA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CI">
+            <summary>
+            CÔTE D'IVOIRE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.HR">
+            <summary>
+            CROATIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CU">
+            <summary>
+            CUBA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CW">
+            <summary>
+            CURAÇAO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CY">
+            <summary>
+            CYPRUS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CZ">
+            <summary>
+            CZECH REPUBLIC
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.DK">
+            <summary>
+            DENMARK
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.DJ">
+            <summary>
+            DJIBOUTI
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.DM">
+            <summary>
+            DOMINICA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.DO">
+            <summary>
+            DOMINICAN REPUBLIC
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.EC">
+            <summary>
+            ECUADOR
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.EG">
+            <summary>
+            EGYPT
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SV">
+            <summary>
+            EL SALVADOR
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GQ">
+            <summary>
+            EQUATORIAL GUINEA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ER">
+            <summary>
+            ERITREA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.EE">
+            <summary>
+            ESTONIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ET">
+            <summary>
+            ETHIOPIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.FK">
+            <summary>
+            FALKLAND ISLANDS (MALVINAS)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.FO">
+            <summary>
+            FAROE ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.FJ">
+            <summary>
+            FIJI
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.FI">
+            <summary>
+            FINLAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.FR">
+            <summary>
+            FRANCE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GF">
+            <summary>
+            FRENCH GUIANA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PF">
+            <summary>
+            FRENCH POLYNESIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TF">
+            <summary>
+            FRENCH SOUTHERN TERRITORIES
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GA">
+            <summary>
+            GABON
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GM">
+            <summary>
+            GAMBIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GE">
+            <summary>
+            GEORGIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.DE">
+            <summary>
+            GERMANY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GH">
+            <summary>
+            GHANA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GI">
+            <summary>
+            GIBRALTAR
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GR">
+            <summary>
+            GREECE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GL">
+            <summary>
+            GREENLAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GD">
+            <summary>
+            GRENADA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GP">
+            <summary>
+            GUADELOUPE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GU">
+            <summary>
+            GUAM
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GT">
+            <summary>
+            GUATEMALA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GG">
+            <summary>
+            GUERNSEY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GN">
+            <summary>
+            GUINEA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GW">
+            <summary>
+            GUINEA-BISSAU
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GY">
+            <summary>
+            GUYANA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.HT">
+            <summary>
+            HAITI
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.HM">
+            <summary>
+            HEARD ISLAND AND MCDONALD ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.VA">
+            <summary>
+            HOLY SEE (VATICAN CITY STATE)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.HN">
+            <summary>
+            HONDURAS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.HK">
+            <summary>
+            HONG KONG
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.HU">
+            <summary>
+            HUNGARY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IS">
+            <summary>
+            ICELAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IN">
+            <summary>
+            INDIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ID">
+            <summary>
+            INDONESIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IR">
+            <summary>
+            IRAN, ISLAMIC REPUBLIC OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IQ">
+            <summary>
+            IRAQ
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IE">
+            <summary>
+            IRELAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IM">
+            <summary>
+            ISLE OF MAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IL">
+            <summary>
+            ISRAEL
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.IT">
+            <summary>
+            ITALY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.JM">
+            <summary>
+            JAMAICA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.JP">
+            <summary>
+            JAPAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.JE">
+            <summary>
+            JERSEY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.JO">
+            <summary>
+            JORDAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KZ">
+            <summary>
+            KAZAKHSTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KE">
+            <summary>
+            KENYA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KI">
+            <summary>
+            KIRIBATI
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KP">
+            <summary>
+            KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KR">
+            <summary>
+            KOREA, REPUBLIC OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KW">
+            <summary>
+            KUWAIT
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KG">
+            <summary>
+            KYRGYZSTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LA">
+            <summary>
+            LAO PEOPLE'S DEMOCRATIC REPUBLIC
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LV">
+            <summary>
+            LATVIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LB">
+            <summary>
+            LEBANON
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LS">
+            <summary>
+            LESOTHO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LR">
+            <summary>
+            LIBERIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LY">
+            <summary>
+            LIBYA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LI">
+            <summary>
+            LIECHTENSTEIN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LT">
+            <summary>
+            LITHUANIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LU">
+            <summary>
+            LUXEMBOURG
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MO">
+            <summary>
+            MACAO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MK">
+            <summary>
+            MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MG">
+            <summary>
+            MADAGASCAR
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MW">
+            <summary>
+            MALAWI
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MY">
+            <summary>
+            MALAYSIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MV">
+            <summary>
+            MALDIVES
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ML">
+            <summary>
+            MALI
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MT">
+            <summary>
+            MALTA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MH">
+            <summary>
+            MARSHALL ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MQ">
+            <summary>
+            MARTINIQUE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MR">
+            <summary>
+            MAURITANIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MU">
+            <summary>
+            MAURITIUS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.YT">
+            <summary>
+            MAYOTTE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MX">
+            <summary>
+            MEXICO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.FM">
+            <summary>
+            MICRONESIA, FEDERATED STATES OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MD">
+            <summary>
+            MOLDOVA, REPUBLIC OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MC">
+            <summary>
+            MONACO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MN">
+            <summary>
+            MONGOLIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ME">
+            <summary>
+            MONTENEGRO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MS">
+            <summary>
+            MONTSERRAT
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MA">
+            <summary>
+            MOROCCO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MZ">
+            <summary>
+            MOZAMBIQUE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MM">
+            <summary>
+            MYANMAR
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NA">
+            <summary>
+            NAMIBIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NR">
+            <summary>
+            NAURU
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NP">
+            <summary>
+            NEPAL
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NL">
+            <summary>
+            NETHERLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NC">
+            <summary>
+            NEW CALEDONIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NZ">
+            <summary>
+            NEW ZEALAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NI">
+            <summary>
+            NICARAGUA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NE">
+            <summary>
+            NIGER
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NG">
+            <summary>
+            NIGERIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NU">
+            <summary>
+            NIUE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NF">
+            <summary>
+            NORFOLK ISLAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MP">
+            <summary>
+            NORTHERN MARIANA ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.NO">
+            <summary>
+            NORWAY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.OM">
+            <summary>
+            OMAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PK">
+            <summary>
+            PAKISTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PW">
+            <summary>
+            PALAU
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PS">
+            <summary>
+            PALESTINE, STATE OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PA">
+            <summary>
+            PANAMA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PG">
+            <summary>
+            PAPUA NEW GUINEA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PY">
+            <summary>
+            PARAGUAY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PE">
+            <summary>
+            PERU
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PH">
+            <summary>
+            PHILIPPINES
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PN">
+            <summary>
+            PITCAIRN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PL">
+            <summary>
+            POLAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PT">
+            <summary>
+            PORTUGAL
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PR">
+            <summary>
+            PUERTO RICO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.QA">
+            <summary>
+            QATAR
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.RE">
+            <summary>
+            RÉUNION
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.RO">
+            <summary>
+            ROMANIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.RU">
+            <summary>
+            RUSSIAN FEDERATION
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.RW">
+            <summary>
+            RWANDA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.BL">
+            <summary>
+            SAINT BARTHÉLEMY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SH">
+            <summary>
+            SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.KN">
+            <summary>
+            SAINT KITTS AND NEVIS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LC">
+            <summary>
+            SAINT LUCIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.MF">
+            <summary>
+            SAINT MARTIN (FRENCH PART)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.PM">
+            <summary>
+            SAINT PIERRE AND MIQUELON
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.VC">
+            <summary>
+            SAINT VINCENT AND THE GRENADINES
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.WS">
+            <summary>
+            SAMOA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SM">
+            <summary>
+            SAN MARINO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ST">
+            <summary>
+            SAO TOME AND PRINCIPE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SA">
+            <summary>
+            SAUDI ARABIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SN">
+            <summary>
+            SENEGAL
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.RS">
+            <summary>
+            SERBIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SC">
+            <summary>
+            SEYCHELLES
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SL">
+            <summary>
+            SIERRA LEONE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SG">
+            <summary>
+            SINGAPORE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SX">
+            <summary>
+            SINT MAARTEN (DUTCH PART)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SK">
+            <summary>
+            SLOVAKIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SI">
+            <summary>
+            SLOVENIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SB">
+            <summary>
+            SOLOMON ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SO">
+            <summary>
+            SOMALIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ZA">
+            <summary>
+            SOUTH AFRICA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GS">
+            <summary>
+            SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SS">
+            <summary>
+            SOUTH SUDAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ES">
+            <summary>
+            SPAIN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.LK">
+            <summary>
+            SRI LANKA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SD">
+            <summary>
+            SUDAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SR">
+            <summary>
+            SURINAME
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SJ">
+            <summary>
+            SVALBARD AND JAN MAYEN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SZ">
+            <summary>
+            SWAZILAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SE">
+            <summary>
+            SWEDEN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.CH">
+            <summary>
+            SWITZERLAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.SY">
+            <summary>
+            SYRIAN ARAB REPUBLIC
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TW">
+            <summary>
+            TAIWAN, PROVINCE OF CHINA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TJ">
+            <summary>
+            TAJIKISTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TZ">
+            <summary>
+            TANZANIA, UNITED REPUBLIC OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TH">
+            <summary>
+            THAILAND
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TL">
+            <summary>
+            TIMOR-LESTE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TG">
+            <summary>
+            TOGO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TK">
+            <summary>
+            TOKELAU
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TO">
+            <summary>
+            TONGA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TT">
+            <summary>
+            TRINIDAD AND TOBAGO
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TN">
+            <summary>
+            TUNISIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TR">
+            <summary>
+            TURKEY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TM">
+            <summary>
+            TURKMENISTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TC">
+            <summary>
+            TURKS AND CAICOS ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.TV">
+            <summary>
+            TUVALU
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.UG">
+            <summary>
+            UGANDA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.UA">
+            <summary>
+            UKRAINE
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.AE">
+            <summary>
+            UNITED ARAB EMIRATES
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.GB">
+            <summary>
+            UNITED KINGDOM
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.US">
+            <summary>
+            UNITED STATES
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.UM">
+            <summary>
+            UNITED STATES MINOR OUTLYING ISLANDS
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.UY">
+            <summary>
+            URUGUAY
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.UZ">
+            <summary>
+            UZBEKISTAN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.VU">
+            <summary>
+            VANUATU
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.VE">
+            <summary>
+            VENEZUELA, BOLIVARIAN REPUBLIC OF
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.VN">
+            <summary>
+            VIET NAM
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.VG">
+            <summary>
+            VIRGIN ISLANDS, BRITISH
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.VI">
+            <summary>
+            VIRGIN ISLANDS, U.S.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.WF">
+            <summary>
+            WALLIS AND FUTUNA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.EH">
+            <summary>
+            WESTERN SAHARA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.YE">
+            <summary>
+            YEMEN
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ZM">
+            <summary>
+            ZAMBIA
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.CountryCodes.ZW">
+            <summary>
+            ZIMBABWE
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.CurrencyCodes">
+            <summary>
+            Full usage of http://csharpmoney.codeplex.com/ not required here,
+            mapping of ISO codes sufficient.
+            
+            ISO 4217 currency codes
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.GlobalID">
+            <summary>
+            Global ID definition according to ISO 6523:
+            http://en.wikipedia.org/wiki/ISO_6523
+            
+            For a full list of identifiers, see here:
+            http://www.oid-info.com/doc/ICD-list.pdf
+            
+            Especially important for ZUGFeRD:
+            Code 0160 - GTIN - Global Trade Item Number for articles
+            Code 0088 - EAN Location Code
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.GlobalID.SchemeID_SWIFT">
+            <summary>
+            SWIFT (BIC)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.GlobalID.SchemeID_DUNS">
+            <summary>
+            D-U-N-S Number
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.GlobalID.SchemeID_GLN">
+            <summary>
+            GS1 Global Location Number (GLN)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.GlobalID.SchemeID_EAN">
+            <summary>
+            GS1 Global Trade Item Number (GTIN, EAN)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.GlobalID.SchemeID_ODETTE">
+            <summary>
+            OSCAR (Odette)
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.InvoiceDescriptor.Invoicee">
+            This party is optional and only relevant for Extended profile
+        </member>
+        <member name="P:Esi.OpenEN16931.InvoiceDescriptor.ShipTo">
+            This party is optional and only relevant for Extended profile
+        </member>
+        <member name="P:Esi.OpenEN16931.InvoiceDescriptor.Payee">
+            This party is optional and only relevant for Extended profile
+        </member>
+        <member name="P:Esi.OpenEN16931.InvoiceDescriptor.ShipFrom">
+            This party is optional and only relevant for Extended profile
+        </member>
+        <member name="M:Esi.OpenEN16931.InvoiceDescriptor.SetTotals(System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Detailinformationen zu Belegsummen
+            </summary>
+            <param name="lineTotalAmount">Gesamtbetrag der Positionen</param>
+            <param name="chargeTotalAmount">Gesamtbetrag der Zuschläge</param>
+            <param name="allowanceTotalAmount">Gesamtbetrag der Abschläge</param>
+            <param name="taxBasisAmount">Basisbetrag der Steuerberechnung</param>
+            <param name="taxTotalAmount">Steuergesamtbetrag</param>
+            <param name="grandTotalAmount">Bruttosumme</param>
+            <param name="totalPrepaidAmount">Anzahlungsbetrag</param>
+            <param name="duePayableAmount">Zahlbetrag</param>
+        </member>
+        <member name="M:Esi.OpenEN16931.InvoiceDescriptor.Save(System.IO.Stream,Esi.OpenEN16931.ZUGFeRDVersion,Esi.OpenEN16931.Profile)">
+            <summary>
+            Saves the descriptor object into a stream.
+            
+            The stream position will be reset to the original position after writing is finished.
+            This allows easy further processing of the stream.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Esi.OpenEN16931.InvoiceDescriptor.addTradeLineItem(System.String,System.String,Esi.OpenEN16931.QuantityCodes,System.Nullable{System.Decimal},System.Decimal,System.Decimal,System.Decimal,Esi.OpenEN16931.TaxTypes,Esi.OpenEN16931.TaxCategoryCodes,System.Decimal,System.String,Esi.OpenEN16931.GlobalID,System.String,System.String,System.String,System.Nullable{System.DateTime},System.String,System.Nullable{System.DateTime})" -->
+        <member name="T:Esi.OpenEN16931.InvoiceValidator">
+            <summary>
+            Validator for ZUGFeRD invoice descriptor.
+             
+            Currently limited to summarizing line totals
+            
+            Output syntax copied from Konik library (https://konik.io/)
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.Party.Street">
+            <summary>
+            Straße inklusive Hausnummer
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.PaymentMeans.SEPACreditorIdentifier">
+            <summary>
+            Gläubiger-Identifikationsnummer
+            
+            https://de.wikipedia.org/wiki/Gl%C3%A4ubiger-Identifikationsnummer
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.PaymentMeans.SEPAMandateReference">
+            <summary>
+            Mandatsreferenz
+            
+            https://de.wikipedia.org/wiki/Mandatsreferenz
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.PaymentMeansTypeCodes">
+            <summary>
+            Adopted to ZUGFeRD 1.0, German description from ZUGFeRD specification
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.NotDefined">
+            <summary>
+            Keine Zahlungsart definiert
+            Available in: Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.AutomatedClearingHouseDebit">
+            <summary>
+            Belastung durch automatisierte Clearingstelle, Z.B. bei Abwicklung durch Zahlungsdienstleister wie Online-Bezahlsysteme
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.InCash">
+            <summary>
+            Bar
+            Available in: Basic, Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.Cheque">
+            <summary>
+            Scheck
+            Available in: Basic, Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.CreditTransfer">
+            <summary>
+            Available in: Basic, Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.DebitTransfer">
+            <summary>
+            Lastschriftübermittlung:
+            Zahlung durch Belastung eines Geldbetrages eines
+            Kontos zugunsten eines anderen.
+            Überweisung international und nationale SEPA-Überweisung
+            
+            Available in: Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.PaymentToBankAccount">
+            <summary>
+            Zahlung an Bankkonto
+            Überweisung national, vor SEPA-Umstellung
+            Available in: Basic, Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.BankCard">
+            <summary>
+            Bankkkarte, Kreditkarte
+            Available in: Basic, Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.DirectDebit">
+            <summary>
+            Lastschriftverfahren
+            
+            Available in: Basic, Extended
+            /// </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.StandingAgreement">
+            <summary>
+            Available in: Basic, Extended
+            </summary>        
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.SEPACreditTransfer">
+            <summary>
+            Available in: Basic, Extended
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.SEPADirectDebit">
+            <summary>
+            Available in: Basic, Extended
+            </summary>        
+        </member>
+        <member name="F:Esi.OpenEN16931.PaymentMeansTypeCodes.ClearingBetweenPartners">
+            <summary>
+            Ausgleich zwischen Partnern.
+            Beträge, die zwei Partner sich gegenseitig schulden werden ausgeglichen um unnütze Zahlungen zu vermeiden.
+            Available in: Basic, Extended
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.QuantityCodes">
+            <summary>
+            ISO Quantity Codes
+            
+            for web reference, see e.g.
+            http://www.robert-kuhlemann.de/iso_masseinheiten.htm
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.C62">
+            <summary>
+            Eins (Stück)
+            Abkürzung: Stk.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.DAY">
+            <summary>
+            Tag
+            Abkürzung: Tag(e)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.HAR">
+            <summary>
+            Hektar
+            Abkürzung: ha
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.HUR">
+            <summary>
+            Stunde
+            Abkürzung: Std.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.KGM">
+            <summary>
+            Kilogramm
+            Abkürzung: kg
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.KTM">
+            <summary>
+            Kilometer
+            Abkürzung: km
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.KWH">
+            <summary>
+            Kilowattstune
+            Abkürzung: kWh
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.LS">
+            <summary>
+            Pauschale
+            Abkürzung: pausch.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.LTR">
+            <summary>
+            Liter
+            Abkürzung: l
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.MIN">
+            <summary>
+            Minute
+            Abkürzung: min
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.MMK">
+            <summary>
+            Quadratmillimeter
+            Abkürzung: mm^2
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.MMT">
+            <summary>
+            Millimeter
+            Abkürzung: mm 
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.MTK">
+            <summary>
+            Kubikmeter
+            Abkürzung: m^2
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.MTQ">
+            <summary>
+            Kubikmeter
+            Abkürzung: m^3 
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.MTR">
+            <summary>
+            Meter
+            Abkürzung: m
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.NAR">
+            <summary>
+            Anzahl Artikel
+            Abkürzung: Anz.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.NPR">
+            <summary>
+            Anzahl Paare
+            Abkürzung: Pr.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.P1">
+            <summary>
+            Prozent
+            Abkürzung: %
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.PCE">
+            <summary>
+            Stück
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.SET">
+            <summary>
+            Set
+            Abkürzung: Set(s)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.TNE">
+            <summary>
+            Tonne (metrisch)
+            Abkürzung:  t
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.WEE">
+            <summary>
+            Woche
+            Abkürzung: Woche(n)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.MON">
+            <summary>
+            Monat
+            Abkürzung: Monat(e)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.ANN">
+            <summary>
+            Jahr
+            Abkürzung: Jahr(e) 
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.QuantityCodes.SEC">
+            <summary>
+            Sekunde
+            Abkürzung: Sekunde(n) 
+            </summary>
+        </member>
+		<member name="F:Esi.OpenEN16931.QuantityCodes.QAN">
+			<summary>
+				Quartal
+				Abkürzung: Quartal(e)
+			</summary>
+		</member>
+        <member name="T:Esi.OpenEN16931.ReferenceTypeCodes">
+            <summary>
+            https://service.unece.org/trade/untdid/d21a/tred/tred1153.htm
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AAA">
+            <summary>
+            Auftragsbestätigungsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AAB">
+            <summary>
+            Proforma-Rechnung
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AAG">
+            <summary>
+            Angebotsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AAJ">
+            <summary>
+            Lieferauftragsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AAL">
+            <summary>
+            Zeichnungsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AAM">
+            <summary>
+            Frachtbriefnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AAS">
+            <summary>
+            Transportdokumenten-Nummer
+            
+            Referenz zu einem Transportdokument, vergeben vom Frachtführer oder seinem Agenten. (z.B.
+            Paketdienst-Zustell-Nr.)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.ABT">
+            <summary>
+            Zollerklärungsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AER">
+            <summary>
+            Projektspezifikationsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AGG">
+            <summary>
+            Reklamationsummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AJS">
+            <summary>
+            Vereinbarungs-Nummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.ALQ">
+            <summary>
+            Nummer einer Rücksendungsanzeige
+            
+            Referenznummer für eine Rücksendungsanzeige. (z.B. Retourennummer)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.ALO">
+            <summary>
+            Wareneingangsmeldung-Nummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.API">
+            <summary>
+            Bestandsberichtnr. Bei Inventurdifferenzen in Berechnung
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.ASI">
+            <summary>
+            Referenznummer zum Abliefernachweis
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AUD">
+            <summary>
+            Inkasso-Referenz
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AUT">
+            <summary>
+            Net area supplier reference
+            A reference identifying a supplier within a net area.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.AWR">
+            <summary>
+            Ursprungsbelegnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.BO">
+            <summary>
+            Rahmenauftragsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.BC">
+            <summary>
+            Vertragsnummer (Käufer)
+            
+            Referenznummer vergeben vom Käufer für einen Vertrag (z.B. Abkommennummer)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.CD">
+            <summary>
+            Gutschrift
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.DL">
+            <summary>
+            Belastunganzeige
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.IV">
+            <summary>
+            Invoice document identifier
+            [1334]
+            Reference number to identify an invoice.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.MG">
+            <summary>
+            Zählernummer
+            
+            z.B. Zählpunktbezeichnung
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.OI">
+            <summary>
+            Vorherige Rechnungsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.PL">
+            <summary>
+            Preisliste
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.PK">
+            <summary>
+            Packlistennummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.POR">
+            <summary>
+            Bestellantwort
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.PP">
+            <summary>
+            Bestelländerung
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.TIN">
+            <summary>
+            Transportauftragsnummer
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.ReferenceTypeCodes.VN">
+            <summary>
+            Auftragsnummer (Lieferant)
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.ServiceCharge">
+            <summary>
+            Logistische Servicegebühren
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.SubjectCodes">
+            <summary>
+            http://www.stylusstudio.com/edifact/D02A/4451.htm
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.SubjectCodes.AAJ">
+            <summary>
+            Zusätzliche Konditionen zu diesem Kauf
+            
+            Angaben zum Eigentumsvorbehalt
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.SubjectCodes.AAK">
+            <summary>
+            Preiskonditionen
+            
+            Angaben zu Entgeltminderungen
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.SubjectCodes.PMT">
+            <summary>
+            Zahlungsinformation
+            
+            Bekanntgabe der Abtretung der
+            Forderung (Zession)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.SubjectCodes.PRF">
+            <summary>
+            Preiskalkulationsschema
+            
+            Zum Beispiel Angabe Zählerstand,
+            Zähler etc. oder andere Hinweise
+            bezüglich Abrechnung.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.SubjectCodes.REG">
+            <summary>
+            Regulatorische Informationen
+            
+            Angaben zum leistenden Unternehmen
+            (Angabe Geschäftsführer, HR-Nummer
+            etc.)
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.SubjectCodes.SUR">
+            <summary>
+            Supplier remarks
+            Remarks from or for a supplier of goods or services.
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.Tax.Percent">
+            <summary>
+            Tax rate
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.Tax.AllowanceChargeBasisAmount">
+            <summary>
+            Gesamtbetrag Zu- und Abschläge des Steuersatzes, Wert
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.TaxCategoryCodes">
+            <summary>
+            http://www.unece.org/trade/untdid/d07a/tred/tred5305.htm
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.A">
+            <summary>
+            Mixed tax rate
+            
+            Code specifying that the rate is based on mixed tax.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.AA">
+            <summary>
+            Lower rate
+            
+            Tax rate is lower than standard rate.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.AB">
+            <summary>
+            Exempt for resale
+            
+            A tax category code indicating the item is tax exempt
+            when the item is bought for future resale.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.AC">
+            <summary>
+            Value Added Tax (VAT) not now due for payment
+            
+            A code to indicate that the Value Added Tax (VAT) amount
+            which is due on the current invoice is to be paid on
+            receipt of a separate VAT payment request.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.AD">
+            <summary>
+            Value Added Tax (VAT) due from a previous invoice
+            
+            A code to indicate that the Value Added Tax (VAT) amount
+            of a previous invoice is to be paid.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.AE">
+            <summary>
+            VAT Reverse charge
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.B">
+            <summary>
+            Transferred (VAT)
+            
+            VAT not to be paid to the issuer of the invoice but
+            directly to relevant tax authority.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.C">
+            <summary>
+            Duty paid by supplier
+            Duty associated with shipment of goods is paid by the
+            supplier; customer receives goods with duty paid.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.E">
+            <summary>
+            Exempt from tax
+            Code specifying that taxes are not applicable.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.G">
+            <summary>
+            Free export item, tax not charged
+            Code specifying that the item is free export and taxes
+            are not charged.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.H">
+            <summary>
+            Higher rate
+            Code specifying a higher rate of duty or tax or fee.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.O">
+            <summary>
+            Services outside scope of tax
+            Code specifying that taxes are not applicable to the
+            services.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.S">
+            <summary>
+            Standard rate
+            
+            Code specifying the standard rate.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxCategoryCodes.Z">
+            <summary>
+            Zero rated goods
+            
+            Code specifying that the goods are at a zero rate.
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.TaxRegistrationSchemeID">
+            <summary>
+            For a reference see:
+            https://service.unece.org/trade/untdid/d21a/tred/tred1153.htm
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxRegistrationSchemeID.FC">
+            <summary>
+            Fiscal number
+            
+            Tax payer's number. Number assigned to individual
+            persons as well as to corporates by a public
+            institution; this number is different from the VAT
+            registration number.
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxRegistrationSchemeID.VA">
+            <summary>
+            VAT registration number
+            
+            Unique number assigned by the relevant tax authority to
+            identify a party for use in relation to Value Added Tax
+            (VAT).
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.TaxTypes">
+            <summary>
+            http://www.unece.org/trade/untdid/d00a/tred/tred5153.htm
+            </summary>
+        </member>
+        <member name="F:Esi.OpenEN16931.TaxTypes.VAT">
+            <summary>
+            Value added tax
+            
+            A tax on domestic or imported goods applied to the value
+            added at each stage in the production/distribution
+            cycle.
+            </summary>
+        </member>
+        <member name="T:Esi.OpenEN16931.TradeAllowanceCharge">
+            <summary>
+            Zu- und Abschlag
+            
+            Beispiel:
+            <SpecifiedTradeAllowanceCharge>
+              <ChargeIndicator>false</ChargeIndicator>
+                 <BasisAmount currencyID="EUR">137.30</BasisAmount>
+                 <ActualAmount>13.73</ActualAmount>
+                 <Reason>Sondernachlass</Reason>
+                 <CategoryTradeTax>
+                   <TypeCode>VAT</TypeCode>
+                   <CategoryCode>S</CategoryCode>
+                   <ApplicablePercent>7</ApplicablePercent>
+                 </CategoryTradeTax>
+               </SpecifiedTradeAllowanceCharge>
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeAllowanceCharge.ChargeIndicator">
+            <summary>
+            Schalter für Zu- und Abschlag
+            
+            false: Abschlag
+            true: Zuschlag
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.SellerAssignedID">
+            <summary>
+            Artikelnummer des Verkäufers
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.BuyerAssignedID">
+            <summary>
+            Artikelnummer des Käufers
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.Name">
+            <summary>
+            Artikelname
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.Description">
+            <summary>
+            Artikel Beschreibung
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.UnitQuantity">
+            <summary>
+            Menge, enthalten
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.BilledQuantity">
+            <summary>
+            Basismenge zum Artikelpreis
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.LineTotalAmount">
+            <summary>
+            Nettobetrag der Rechnungsposition
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.TaxCategoryCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.TaxPercent">
+            <summary>
+            Steuersatz
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.TaxType">
+            <summary>
+            Steuertyp
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.NetUnitPrice">
+            <summary>
+            Netto Einzelpreis
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.GrossUnitPrice">
+            <summary>
+            Brutto Einzelpreis
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.UnitCode">
+            <summary>
+            Einheit der Preisbasismenge
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.AssociatedDocument">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Esi.OpenEN16931.TradeLineItem.ActualDeliveryDate">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

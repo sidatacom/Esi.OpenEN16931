@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net10.0</TargetFrameworks>
+		<Version>18.0.0</Version>
+		<Authors>Stephan Stapel</Authors>
+		<Company>STwo Industries GmbH</Company>
+		<Description>Esi.OpenEN16931 provides tools for creating and validating electronic invoice XML descriptors for EN 16931, XRechnung, Factur-X and ZUGFeRD. It is based on using PDF/A-3 to store invoices along with embedded XML descriptors for easy processing. This fork keeps the library focused on practical e-invoicing workflows and references its own project documentation and releases.</Description>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/sidatacom/Esi.OpenEN16931/</PackageProjectUrl>
+		<PackageTags>zugferd xml xrechnung pdf invoice</PackageTags>
+		<Copyright>STwo Industries GmbH, 2026</Copyright>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<AssemblyTrademark>http://www.s2-industries.com</AssemblyTrademark>
+		<FileVersion>1.0.0</FileVersion>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<AssemblyName>Esi.OpenEN16931</AssemblyName>
+		<SignAssembly>False</SignAssembly>
+		<AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>Esi.OpenEN16931</PackageId>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/sidatacom/Esi.OpenEN16931</RepositoryUrl>
+		<UserSecretsId>ceeaa3c6-7c48-4061-b8f6-da26a9de5879</UserSecretsId>
+		<RepositoryType>git</RepositoryType>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<LangVersion>10.0</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>bin\Debug</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>bin\Release</OutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.300" PrivateAssets="All" />
+		<PackageReference Include="PdfSharp" Version="6.2.4" />
+		<PackageReference Include="ClosedXML" Version="0.105.0" />
+		<PackageReference Include="Scriban" Version="7.2.5" />
+		<PackageReference Include="EPPlus" Version="8.6.1" />
+		<PackageReference Include="PDFsharp-extended" Version="1.3.0" />
+		<PackageReference Include="ZUGFeRD-csharp" Version="18.0.0" />
+	</ItemGroup>
+</Project>

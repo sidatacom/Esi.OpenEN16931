@@ -4,7 +4,9 @@ public enum XRechnungConformance
 {
     CIUS,
     Extension,
-    CVD
+    CVD,
+    BIS,
+    CII
 }
 
 public enum Syntax
@@ -12,3 +14,4 @@ public enum Syntax
     CII,
     UBL
 }
+

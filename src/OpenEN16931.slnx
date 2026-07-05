@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Projektmappenelemente/">
+    <File Path="../README.md" />
+  </Folder>
   <Project Path="Esi.OpenEN16931.Html.Demo/Esi.OpenEN16931.Html.Demo.csproj" />
   <Project Path="Esi.OpenEN16931/Esi.OpenEN16931.csproj" />
 </Solution>

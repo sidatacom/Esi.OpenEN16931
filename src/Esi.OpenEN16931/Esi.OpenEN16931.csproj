@@ -37,7 +37,6 @@
 		<OutputPath>bin\Release</OutputPath>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.300" PrivateAssets="All" />
 		<PackageReference Include="PdfSharp" Version="6.2.4" />
 		<PackageReference Include="ClosedXML" Version="0.105.0" />

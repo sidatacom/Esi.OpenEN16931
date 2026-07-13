@@ -3,5 +3,6 @@
     <File Path="../README.md" />
   </Folder>
   <Project Path="Esi.OpenEN16931.Html.Demo/Esi.OpenEN16931.Html.Demo.csproj" />
+  <Project Path="Esi.OpenEN16931.Validation.Demo/Esi.OpenEN16931.Validation.Demo.csproj" Id="ec68fa68-a969-45ae-975a-42ae556cf8ee" />
   <Project Path="Esi.OpenEN16931/Esi.OpenEN16931.csproj" />
 </Solution>

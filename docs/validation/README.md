@@ -100,17 +100,18 @@ The repositories in the country blocks below are evidence sources, not a claim t
 
 ### Common dependencies
 
-- [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931) supplies shared EN 16931 UBL/CII schemas and rules. Examples include `ubl/schematron/EN16931-UBL-validation.sch` and `cii/schematron/EN16931-CII-validation.sch`.
+- [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931) supplies shared EN 16931 UBL/CII schemas and rules. The current public release is 1.3.16; examples include `ubl/schematron/EN16931-UBL-validation.sch` and `cii/schematron/EN16931-CII-validation.sch`.
 - [OpenPEPPOL/peppol-bis-invoice-3](https://github.com/OpenPEPPOL/peppol-bis-invoice-3) supplies shared Peppol BIS Billing rules. A Peppol repository is not a national validator merely because a country uses Peppol.
 - [itplr-kosit/validator-configuration-bis](https://github.com/itplr-kosit/validator-configuration-bis) is a shared BIS execution configuration. Its UBL XSD and `CEN-EN16931-UBL.xslt`/`PEPPOL-EN16931-UBL.xslt` files are common dependencies, not country artefacts.
+- [phax/phive-rules-foundations](https://github.com/phax/phive-rules-foundations) now contains the XSD-only PHIVE foundation modules `phive-rules-ebinterface`, `phive-rules-facturae`, `phive-rules-fatturapa`, `phive-rules-finvoice`, `phive-rules-ksef`, `phive-rules-osa` and `phive-rules-teapps`. They were extracted from `phax/phive-rules` in v4.5.0; their Maven and VES coordinates are unchanged. These modules provide structural validation, not national Schematron business rules.
 - `origins/` is read-only. Paths below are references to checked-out upstream material and must not be modified.
 
 ### Austria (AT)
 
 - **Syntax/profile:** Austrian `ebInterface`; Austrian B2G rules; UBL/Peppol is a separate shared route.
-- **Country-specific projects:** [Stoicera/einvoice_at](https://github.com/Stoicera/einvoice_at) contains `validation/src/main/resources/schematron/at-b2g-ebinterface-6.1.sch`, `validation/src/main/java/com/stoicera/einvoice/validation/stage/BusinessRuleStage.java` and `AT-B2G-01` through `AT-B2G-05`. The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository also contains the `phive-rules-ebinterface` national module.
-- **Schemas/rules/tests:** ebInterface XSDs are supplied by the `ph-ebinterface` dependency; PHIVE tests are under `phive-rules-ebinterface/src/test/resources/external/test-files/v61/`. Austrian project tests are under `validation/src/test/java/.../SchematronStageTest.java` and `validation/src/test/resources/corpus/`.
-- **Status:** National ebInterface/AT-B2G evidence is available. `austriapro/ebinterface-ubl-mapping` remains mapping only; Peppol artefacts are shared dependencies.
+- **Country-specific projects:** [Stoicera/einvoice_at](https://github.com/Stoicera/einvoice_at) contains `validation/src/main/resources/schematron/at-b2g-ebinterface-6.1.sch`, `validation/src/main/java/com/stoicera/einvoice/validation/stage/BusinessRuleStage.java` and `AT-B2G-01` through `AT-B2G-05`. The XSD-only PHIVE module is now in [phax/phive-rules-foundations](https://github.com/phax/phive-rules-foundations), under `phive-rules-ebinterface`.
+- **Schemas/rules/tests:** ebInterface XSDs are supplied by the `ph-ebinterface` dependency; foundation-module tests are under `phive-rules-foundations/phive-rules-ebinterface/src/test/resources/external/test-files/v61/`. Austrian project tests are under `validation/src/test/java/.../SchematronStageTest.java` and `validation/src/test/resources/corpus/`.
+- **Status:** National ebInterface/AT-B2G evidence is available. The PHIVE module is structural/XSD-only; the AT-B2G Schematron in `einvoice_at` is a separate project-specific B2G rule layer. `austriapro/ebinterface-ubl-mapping` remains mapping only; Peppol artefacts are shared dependencies.
 
 ### Belgium (BE)
 
@@ -152,7 +153,7 @@ The repositories in the country blocks below are evidence sources, not a claim t
 - **Syntax/profile:** OIOUBL, a Danish UBL profile; NemHandel and Peppol transport rules are separate.
 - **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-oioubl`.
 - **Rules:** `phive-rules-oioubl/src/main/resources/external/schematron/oioubl/2.0.2/OIOUBL_Invoice_Schematron.xsl` and `.../3.0.1/xslt/OIOUBL-Invoice.xslt`; source rules for 3.0.1 are under `phive-rules-oioubl/src/test/resources/external/rule-source/oioubl/3.0.1/`.
-- **Status:** Danish profile rules identified. The invoice XSD path was not verified in the checked-out module, so schema completeness remains partial.
+- **Status:** Danish profile rules identified. The current PHIVE documentation marks OIOUBL as a legacy/discontinued government profile, so the exact accepted version and authority route must be confirmed before using it for new integrations. The invoice XSD path was not verified in the checked-out module, so schema completeness remains partial.
 
 ### Estonia (EE)
 
@@ -164,8 +165,8 @@ The repositories in the country blocks below are evidence sources, not a claim t
 ### Finland (FI)
 
 - **Syntax/profile:** Finvoice 3.0 and TEAPPSXML 3.0; UBL/CII/Peppol is a separate shared route.
-- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-finvoice` and `phive-rules-teapps`.
-- **Schemas/tests:** `phive-rules-finvoice/src/main/resources/external/schemas/Finvoice3.0.xsd`; `phive-rules-teapps/src/main/resources/external/schemas/teappsxmlv30_schema_invoices_0.xsd`. The modules contain test data; no validation Schematron was found, and `docs/3.0/FinvoiceEnglanti.xsl` is a presentation stylesheet.
+- **Country-specific project/module:** The XSD-only modules are now in [phax/phive-rules-foundations](https://github.com/phax/phive-rules-foundations), under `phive-rules-finvoice` and `phive-rules-teapps`.
+- **Schemas/tests:** `phive-rules-foundations/phive-rules-finvoice/src/main/resources/external/schemas/Finvoice3.0.xsd`; `phive-rules-foundations/phive-rules-teapps/src/main/resources/external/schemas/teappsxmlv30_schema_invoices_0.xsd`. The modules contain test data; no validation Schematron was found, and `docs/3.0/FinvoiceEnglanti.xsl` is a presentation stylesheet.
 - **Status:** National XSD validation evidence is available; business-rule artefacts are incomplete. No separate Finnish validator repository was identified.
 
 ### France (FR)
@@ -192,8 +193,8 @@ The repositories in the country blocks below are evidence sources, not a claim t
 ### Hungary (HU)
 
 - **Syntax/profile:** NAV Online Számla (OSA) reporting XML; Peppol/UBL is a separate invoice route.
-- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-osa`.
-- **Schemas:** `phive-rules-osa/src/main/resources/external/schemas/v3.0/invoiceData.xsd`, `invoiceBase.xsd`, `invoiceApi.xsd`, `invoiceAnnulment.xsd`, `common.xsd` and `serviceMetrics.xsd`; version 2.0 equivalents are under `.../schemas/v2.0/`.
+- **Country-specific project/module:** The XSD-only module is now in [phax/phive-rules-foundations](https://github.com/phax/phive-rules-foundations), under `phive-rules-osa`.
+- **Schemas:** `phive-rules-foundations/phive-rules-osa/src/main/resources/external/schemas/v3.0/invoiceData.xsd`, `invoiceBase.xsd`, `invoiceApi.xsd`, `invoiceAnnulment.xsd`, `common.xsd` and `serviceMetrics.xsd`; version 2.0 equivalents are under `.../schemas/v2.0/`.
 - **Status:** Hungarian reporting schemas are verified, but this is not evidence of an EN 16931 national invoice validator. No separate Hungarian invoice validator repository was identified.
 
 ### Ireland (IE)
@@ -206,9 +207,9 @@ The repositories in the country blocks below are evidence sources, not a claim t
 ### Italy (IT)
 
 - **Syntax/profile:** FatturaPA XML; Italian Peppol extensions are a separate UBL profile.
-- **Country-specific project/module:** The shared PHIVE repository contains `phive-rules-fatturapa` and `phive-rules-peppol-italy`.
-- **Rules/tests:** Italian Peppol rules include `phive-rules-peppol-italy/src/main/resources/external/schematron/peppol-italy/3.2.1/invoice/AGID-EN16931-UBL - PEPPOL ITA.xslt`, `AGID-PEPPOL-T01.xslt` and related order/despatch rules; invoice fixtures are under `phive-rules-peppol-italy/src/test/resources/external/test-files/3.2.1/invoice/`. `phive-rules-fatturapa` registers runtime validation but contains no verified local FatturaPA XSD or Schematron.
-- **Status:** Italian Peppol national rules are verified; FatturaPA artefact coverage is incomplete. Do not substitute an unrelated converter XSD.
+- **Country-specific project/module:** The XSD-only `phive-rules-fatturapa` module is now in [phax/phive-rules-foundations](https://github.com/phax/phive-rules-foundations); Italian Peppol extensions remain in `phax/phive-rules` as `phive-rules-peppol-italy`.
+- **Rules/tests:** Italian Peppol rules include `phive-rules-peppol-italy/src/main/resources/external/schematron/peppol-italy/3.2.1/invoice/AGID-EN16931-UBL - PEPPOL ITA.xslt`, `AGID-PEPPOL-T01.xslt` and related order/despatch rules; invoice fixtures are under `phive-rules-peppol-italy/src/test/resources/external/test-files/3.2.1/invoice/`. The foundation module supplies FatturaPA structural validation; it does not establish a complete FatturaPA business-rule validator.
+- **Status:** Italian Peppol national rules are verified. The PHIVE README records that the 3.2.1 AGID package was updated in place and that the committed XSLT was not regenerated from the 2026-08-03 snapshot, so consumers must pin and verify the exact artefact version. Do not substitute an unrelated converter XSD.
 
 ### Latvia (LV)
 
@@ -248,8 +249,8 @@ The repositories in the country blocks below are evidence sources, not a claim t
 ### Poland (PL)
 
 - **Syntax/profile:** KSeF XML and Peppol with Polish extensions; these are distinct routes.
-- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-ksef`.
-- **Schemas/tests:** `phive-rules-ksef/src/main/resources/external/schemas/3.0.0/StrukturyDanych_v10-0E.xsd` and `schemat.xsd`; versions 2.0.0 and 1.0.0 are also present. Version 1.0.0 includes `KodyKrajow_v9-0E.xsd` and `ElementarneTypyDanych_v9-0E.xsd`; fixtures are under `phive-rules-ksef/src/test/resources/external/test-files/fa1`, `fa2` and `fa3`.
+- **Country-specific project/module:** The XSD-only `phive-rules-ksef` module is now in [phax/phive-rules-foundations](https://github.com/phax/phive-rules-foundations).
+- **Schemas/tests:** `phive-rules-foundations/phive-rules-ksef/src/main/resources/external/schemas/3.0.0/StrukturyDanych_v10-0E.xsd` and `schemat.xsd`; versions 2.0.0 and 1.0.0 are also present. Version 1.0.0 includes `KodyKrajow_v9-0E.xsd` and `ElementarneTypyDanych_v9-0E.xsd`; fixtures are under `phive-rules-foundations/phive-rules-ksef/src/test/resources/external/test-files/fa1`, `fa2` and `fa3`.
 - **Status:** Polish KSeF schema validation is verified. It must not be confused with generic Peppol validation.
 
 ### Portugal (PT)
@@ -283,8 +284,8 @@ The repositories in the country blocks below are evidence sources, not a claim t
 ### Spain (ES)
 
 - **Syntax/profile:** Facturae XML; FACe is a gateway, not the syntax.
-- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-facturae`.
-- **Schemas/tests:** `phive-rules-facturae/src/main/resources/external/schemas/Facturaev3_2.xsd`, `Facturaev3_2_1.xsd`, `Facturaev3_2_2.xsd` and older versions; XML and `.xsig` fixtures are under `phive-rules-facturae/src/test/resources/external/test-files/`.
+- **Country-specific project/module:** The XSD-only `phive-rules-facturae` module is now in [phax/phive-rules-foundations](https://github.com/phax/phive-rules-foundations).
+- **Schemas/tests:** `phive-rules-foundations/phive-rules-facturae/src/main/resources/external/schemas/Facturaev3_2.xsd`, `Facturaev3_2_1.xsd`, `Facturaev3_2_2.xsd` and older versions; XML and `.xsig` fixtures are under `phive-rules-foundations/phive-rules-facturae/src/test/resources/external/test-files/`.
 - **Status:** Spanish national schema and test evidence is verified; no validation Schematron was found in the module.
 
 ### Sweden (SE)

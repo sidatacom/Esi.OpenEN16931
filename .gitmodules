@@ -345,3 +345,7 @@ url = https://github.com/itplr-kosit/validator.git
 [submodule "origins/validator-configuration-xrechnung"]
 path = origins/validator-configuration-xrechnung
 url = https://github.com/itplr-kosit/validator-configuration-xrechnung.git
+
+[submodule "origins/phax/phive-rules-foundations"]
+path = origins/phax/phive-rules-foundations
+url = https://github.com/phax/phive-rules-foundations.git

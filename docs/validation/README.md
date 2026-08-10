@@ -3,315 +3,303 @@
 
 The validation logic in this project follows the standard e-invoicing validation workflow: XML Schema (XSD) validation followed by Schematron rule (XSLT) application.
 
-## Validation Types
-
-This project supports multiple e-invoicing standards and profiles. Each type has its own set of schemas and Schematron rules.
-
-| Type | Sub-module | Description |
-|------|-----------|-------------|
-| **XRechnung** | `itplr-kosit/validator-configuration-xrechnung` | German national profile (CIUS DE) for public-sector e-invoicing. |
-| **BIS** | `itplr-kosit/validator-configuration-bis` | German national profile (Factur-X / ZUGFeRD). |
-| **CII** | `itplr-kosit/validator-configuration-cii` | Cross-Industry Invoice (UN/CEFACT) standard. |
-| **CEN** | `itplr-kosit/validator-configuration-bis` | Core EN 16931 rules (common to many profiles). |
-
----
-
-## Country-to-Invoice-Type Matrix
-
-This matrix maps each EU/EEA country to the invoice types (and their underlying standards) that are required or commonly used for public-sector and private transactions.
-
-| Country | XRechnung | Factur-X | PEPPOL BIS 3 | CII | UBL |
-|---------|-----------|----------|--------------|-----|-----|
-| **Austria (AT)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Belgium (BE)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Bulgaria (BG)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Croatia (HR)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Cyprus (CY)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Czech Republic (CZ)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Denmark (DK)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Estonia (EE)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Finland (FI)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **France (FR)** | ✅ | ✅✅ | ✅ | ✅ | ✅ |
-| **Germany (DE)** | ✅✅ | ✅ | ✅ | ✅ | ✅ |
-| **Greece (GR)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Hungary (HU)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Ireland (IE)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Italy (IT)** | ✅ | ✅✅ | ✅ | ✅ | ✅ |
-| **Latvia (LV)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Lithuania (LT)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Luxembourg (LU)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Malta (MT)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Netherlands (NL)** | ✅ | ✅✅ | ✅ | ✅ | ✅ |
-| **Norway (NO)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Poland (PL)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Portugal (PT)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Romania (RO)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Slovakia (SK)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Slovenia (SI)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Spain (ES)** | ✅✅ | ✅ | ✅ | ✅ | ✅ |
-| **Sweden (SE)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **Switzerland (CH)** | ⚠️ | ✅ | ✅ | ✅ | ✅ |
-| **United Kingdom (GB)** | ✅ | ✅ | ✅ | ✅ | ✅ |
-
-**Legend:**
-- ✅✅ = Mandatory for public-sector transactions only
-- ✅ = Commonly used in private sector or cross-border
-- ⚠️ = Optional / not yet mandatory (check local regulations)
-
-### Invoice Type Details by Country
-
-#### **Germany (DE) — XRechnung Leader**
-- **Primary:** XRechnung CIUS DE (mandatory for all public-sector invoices since 2021)
-- **Secondary:** Factur-X / ZUGFeRD (widely adopted in private sector, e.g., SAP Ariba)
-- **Note:** Germany is the most advanced country for both standards
-
-#### **France (FR) — Factur-X Pioneer**
-- **Primary:** Factur-X (mandatory since 2023 for all business-to-business and public-sector invoices)
-- **Secondary:** UBL-based formats for international transactions
-- **Note:** France has the most aggressive Factur-X adoption in Europe
-
-#### **Italy (IT) — Factur-X Mandate**
-- **Primary:** Factur-X (mandatory since 2019 via national decree D.Lgs. 83/2019)
-- **Secondary:** XRechnung for public-sector transactions with German entities
-- **Note:** Italy was the first EU country to mandate Factur-X nationally
-
-#### **Netherlands (NL) — Dual Adoption**
-- **Primary:** Both XRechnung and Factur-X mandatory for public sector
-- **Secondary:** PEPPOL BIS 3 widely used for cross-border EU transactions
-- **Note:** Netherlands often acts as a testbed for new e-invoicing standards
-
-#### **Spain (ES) — Strong Public Sector**
-- **Primary:** XRechnung CIUS ES (mandatory since 2018)
-- **Secondary:** Factur-X gaining traction, especially in retail and logistics
-- **Note:** Spain's public procurement system is among the most advanced in Europe
-
-#### **Austria (AT), Belgium (BE), Poland (PL), Sweden (SE)**
-- These countries mandate XRechnung for public-sector transactions but also support Factur-X as an alternative.
-
-#### **Bulgaria, Greece, Luxembourg, Portugal**
-- Currently transitioning to e-invoicing mandates. Check local regulations as these are being updated frequently (2023–2026).
-
----
-
-## Validation Sources Matrix
-
-This matrix documents every validation rule set, showing which repository contains the schemas, business rules, and test data for each format.
-
-| Format | Schema Source (XSD) | Business Rules (Schematron/XSLT) | Test Suite | Official Documentation |
-|--------|---------------------|----------------------------------|------------|------------------------|
-| **XRechnung CIUS DE** | `itplr-kosit/validator-configuration-xrechnung` / resources/xrechnung/*.xsd | `itplr-kosit/xrechnung-schematron` / rules/de/*.xsl | `itplr-kosit/xrechnung-testsuite` / test_data/cius_de/* | [KoSIT XRechnung](https://www.kosit.de/en/standardisation/xrechnung) |
-| **XRechnung CIUS ES** (Spain) | Same as DE + country-specific extensions | Same as DE + `rules/es/*.xsl` | Same as DE | [Spanish XRechnung](https://sede.sii.gob.es/serviciosWeb/validarFacturaXml) |
-| **XRechnung CIUS NL** (Netherlands) | Same as DE + Dutch tax rules | Same as DE + `rules/nl/*.xsl` | Same as DE | [Dutch e-invoicing](https://www.belastingdienst.nl/wps/wcm/connect/dut_content_1023684/) |
-| **Factur-X / UBL** | `OpenPEPPOL/peppol-bis-invoice-3` / resources/billing/en/*.xsd | `itplr-kosit/xrechnung-schematron` + OpenPEPPOL rules | PEPPOL Box test suite | [Factur-X specification](https://factur-x.eu/) |
-| **ZUGFeRD (PDF/A-3 packaging)** | `stephanstapel/ZUGFeRD-csharp` / resources/*.xsd | ZUGFeRD 1.0/2.0 XAdES validation rules | ZUGFeRD test suite | [cEN 3467](https://www.din.de/de/standards/details-std?standartNr=3467) |
-| **PEPPOL BIS Billing 3.0** | `OpenPEPPOL/peppol-bis-invoice-3` / resources/*.xsd | OpenPEPPOL Schematron rules (`.xsl`) | PEPPOL test suite | [PEPPOL BIS 3.0](https://www.peppol.eu/billing/) |
-| **CII Simple Invoice** | `itplr-kosit/validator-configuration-cii` / resources/cii/*.xsd | Minimal Schematron rules (`.xsl`) | KoSIT CII test suite | [UN/CEFACT CII](https://www.unece.org/trade/uncefact/) |
-| **Factur-X French** | `gflohr/e-invoice-eu` / resources/fr/*.xsd | French tax law rules (`.xsl`) | French validation suite | [French e-invoicing](https://facture-electronique.gouv.fr/) |
-| **ebInterface Austria** | `austriapro/ebinterface-ubl-mapping` / UBL schemas | Austrian business rules (`.xsl`) | Austria test suite | [Austria ebInterface](https://www.eb-interface.at/) |
+## Conceptual Layers
+
+The terms used in this document belong to different layers. They must not be read as interchangeable invoice types:
+
+| Layer | Meaning / main question | Examples | Does not define |
+|-------|-------------------------|----------|-----------------|
+| **Semantic model** | Which business terms and core rules are represented? | EN 16931 | XML elements, PDF packaging, or transport |
+| **Syntax** | How is the invoice data serialized? | UBL 2.1, UN/CEFACT CII | The selected profile or delivery channel |
+| **Profile and rules** | Which constraints and business rules apply to the semantic model and syntax? | XRechnung CIUS, PEPPOL BIS Billing 3.0 | Whether the invoice is wrapped in PDF/A-3 |
+| **Container** | How are a readable representation and structured data packaged together? | PDF/A-3 with embedded CII XML, as used by Factur-X/ZUGFeRD | A new semantic model or UBL content |
+| **Transport and exchange** | How does the invoice reach the recipient? | Peppol eDelivery, Mercurius, NemHandel, KSeF, FACe, national portals, email or other agreed channels | The invoice syntax or business rules |
 
----
+For example, a PEPPOL BIS invoice is an EN 16931 invoice serialized in UBL and validated with PEPPOL rules. A Factur-X or ZUGFeRD document is a PDF/A-3 container with embedded CII XML; it is not a UBL document. UBL and CII therefore do not require separate country columns as if they were competing profiles. They are syntaxes selected by a profile or implementation.
+
+## Options and Variations by Layer
+
+### Semantic Model
+
+- **EN 16931 core model:** Defines the business terms (`BT-*`), business groups, cardinalities, and core business rules shared by conforming invoice profiles.
+- **Core versus constrained model:** A profile such as XRechnung or PEPPOL BIS constrains the EN 16931 model by making selected terms more specific or mandatory. It does not create a new XML syntax.
+- **Current project scope:** The public model does not expose an EN 16931 edition selector. The concrete edition is determined by the schema and rule package selected for validation.
+
+### Syntax
 
-## Detailed Validation Types
+The following table consolidates the publicly documented invoice syntaxes referenced for the 27 EU member states. Each syntax family is listed once, with the countries in which the cited inventory identifies it. The project currently exposes only `UBL` and `CII` through `Esi.OpenEN16931.Models.Syntax`; the project-status column must not be read as complete implementation support.
 
-### **XRechnung Validation** (German Public-Sector Standard)
+| Invoice syntax family | XML or EDI representation | Countries / documented use | Classification | Project API status |
+|-----------------------|--------------------------|---------------------------|----------------|--------------------|
+| **UBL 2.1** | UBL 2.1 `Invoice` or `CreditNote` XML | Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Sweden | XML syntax; used by national and EN 16931 profiles | Exposed as `UBL` |
+| **UN/CEFACT CII 16B/D16B** | Cross Industry Invoice XML | Bulgaria, Croatia, Finland, France, Germany, Ireland, Luxembourg, Portugal, Romania, Slovakia | XML syntax; used by EN 16931 profiles | Exposed as `CII` |
+| **ebInterface** | Austrian ebInterface XML | Austria | National XML invoice syntax | Not exposed as a separate syntax |
+| **Finvoice 3.0** | Finvoice XML | Finland | National XML invoice syntax | Not exposed as a separate syntax |
+| **TEAPPSXML 3.0** | TEAPPSXML XML | Finland | National XML invoice syntax | Not exposed as a separate syntax |
+| **ISDOC** | ISDOC XML | Czechia | National XML invoice syntax | Not exposed as a separate syntax |
+| **EDIFACT** | UN/EDIFACT message syntax | Czechia and legacy/interoperability scenarios | EDI syntax; not an XML syntax | Not exposed as a separate syntax |
+| **FatturaPA** | FatturaPA XML | Italy | National XML invoice syntax; SDI is the clearance platform | Not exposed as a separate syntax |
+| **Facturae** | Facturae XML | Spain | National XML invoice syntax; FACe is a gateway | Not exposed as a separate syntax |
+| **e-SLOG 2.0** | e-SLOG XML | Slovenia | National XML invoice syntax with EN 16931/Peppol interoperability | Not exposed as a separate syntax |
+| **Estonian national XML** | National XML representation; the cited factsheet does not name one single vocabulary | Estonia | National syntax option alongside EN 16931/Peppol | Not exposed as a separate syntax |
 
-**Overview:** XRechnung is the German national profile for public-sector e-invoicing. It is based on EN 16931 and supports UBL, CII, and Factur-X formats.
+The following are profiles or rules applied to a syntax rather than additional syntaxes: Peppol BIS Billing 3.0, OIOUBL, XRechnung, French CIUS, Croatian CIUS, NLCIUS, UBL-OHNL, SI-UBL, CIUS-PT, RO_CIUS and Polish Peppol extensions. Platforms and exchange/reporting systems such as Peppol eDelivery, SDI, KSeF, PEF, FACe, Mercurius, SABIS, NAV Online Invoice and RO e-Factura are also not syntax families. `NAV XML` and `KSeF XML` belong to those reporting/platform schemas, not to this invoice-syntax table.
 
-**Source & Rules:**
-- **Sub-module:** `itplr-kosit/validator-configuration-xrechnung`
-- **Repository:** [itplr-kosit/validator-configuration-xrechnung](https://github.com/itplr-kosit/validator-configuration-xrechnung)
-- **Schemas:** XSDs for UBL 2.1 and CII 16B, tailored for XRechnung
-- **Business Rules:** XSLT files for EN 16931, XRechnung CIUS (Core Implementation of Uniform Standards), and XRechnung CVD (Customized Validation Data)
+Factur-X/ZUGFeRD is deliberately excluded from this syntax table: it is one PDF/A-3 hybrid container family with embedded CII XML. The CII is the invoice syntax; PDF/A-3 is the container. Its details are documented in [Containers and Hybrid Formats](#containers-and-hybrid-formats).
 
-**Key Validation Features:**
-- German-specific tax codes and VAT categories
-- Strict cardinality checks for UBL Invoice and CreditNote documents
-- Handling of specific German construction codes (BR-CL-23, BR-CL-24, etc.)
-- Support for XRechnung CVD extensions used in public procurement
-- CIUS profile validation with mandatory fields per BT-* business terms
+The [detailed national inventory](#public-national-profile-and-syntax-inventory) records the source and country-specific qualification for each syntax, profile and platform entry.
 
-**Test Suite:** `itplr-kosit/xrechnung-testsuite` / test_data/cius_de/
+UBL and CII can represent the EN 16931 business model. XSD validation checks the selected XML vocabulary; profile-specific Schematron rules are applied separately. Choosing UBL or CII alone therefore does not select the business rules.
 
----
+### Profiles and Rules
 
-### **BIS (Factur-X / ZUGFeRD) Validation** (PDF/A-3 Packaging)
+The project declares the following conformance values and validation-routing targets:
 
-**Overview:** BIS refers to the German national profile for Factur-X and ZUGFeRD formats, which are based on the PDF/A-3 standard with embedded XML data. This validates both the container format AND the invoice content.
+This is not a complete catalogue of all national profiles used across the 27 EU member states. It covers the rule packages and configuration names currently represented by this project. The public inventory below separates documented national formats and profiles from this project's validator support. National formats and profiles such as `ebInterface`, `OIOUBL`, `Finvoice`, `ISDOC`, `FatturaPA`, `Facturae`, `KSeF`, `PEF`, `RO_CIUS`, `CIUS-PT` and `e-SLOG` are not automatically supported or validated by the configurations listed below.
 
-**Source & Rules:**
-- **Sub-module:** `itplr-kosit/validator-configuration-bis`
-- **Repository:** [itplr-kosit/validator-configuration-bis](https://github.com/itplr-kosit/validator-configuration-bis)
-- **Schemas:** Factur-X and ZUGFeRD schemas combined
-- **Business Rules:** Specific rules for Franco-German e-invoicing standards
+### Public National Profile and Syntax Inventory
 
-**Key Validation Features:**
-- PDF/A-3 packaging validation (XML embedded in PDF structure)
-- XAdES signature verification for electronic signatures
-- Hybrid format support: Factur-X combines UBL content with CII packaging metadata
-- Trade allowances and tax calculation checks within BIS context
-- ZUGFeRD 1.0, 2.0, and 2.2 variant validation
+The European Commission country factsheets are the primary public source for this inventory. `No separate national CIUS identified` is deliberately conservative: it does not mean that a country has no local implementation, only that the cited factsheet does not identify one as a distinct EN 16931 profile. Platforms and tax-reporting systems are named as such and are not classified as invoice syntaxes. The project-status column describes the configurations documented in this repository, not the capabilities of the national systems.
 
-**Additional Packaging Rules:**
-- Validate PDF/A-3 compliance (ISO 24517)
-- Check XAdES signature structure (ETSI EN 319 421)
-- Verify XML embedded in PDF body part stream
+| Country | Publicly identified profile or syntax | Layer / type | EN 16931 relationship | Public source | Project status |
+|---------|--------------------------------------|--------------|-----------------------|---------------|----------------|
+| Austria | ebInterface; UBL/Peppol options | National XML syntax and exchange profiles | Separate national syntax; mapping or profile compatibility must be checked | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108876/eInvoicing+in+Austria) | No national configuration listed |
+| Belgium | Peppol BIS Billing 3.0 over UBL | Cross-border profile and syntax | EN 16931 profile; no separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108877/eInvoicing+in+Belgium) | No national configuration listed |
+| Bulgaria | UBL 2.1 and CII exchange options | XML syntaxes; CAIS EPP is a platform | EN 16931-based exchange options; platform is not a profile | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108878/eInvoicing+in+Bulgaria) | No national configuration listed |
+| Croatia | Croatian national CIUS/profile over UBL/CII | National profile and XML syntaxes | EN 16931 CIUS/profile | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108879/eInvoicing+in+Croatia) | No national configuration listed |
+| Cyprus | Peppol BIS Billing 3.0 over UBL | Cross-border profile and syntax | EN 16931 profile; no separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108880/eInvoicing+in+Cyprus) | No national configuration listed |
+| Czechia | ISDOC; UBL 2.1 and EDIFACT options | National XML syntax and alternative syntaxes | ISDOC is separate from the EN 16931 syntax; UBL option is EN 16931-compatible where profiled | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108881/eInvoicing+in+Czech+Republic) | No national configuration listed |
+| Denmark | OIOUBL; Peppol BIS | National UBL profile and exchange ecosystem | OIOUBL is a national UBL profile; NemHandel is transport infrastructure | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108882/eInvoicing+in+Denmark) | No national configuration listed |
+| Estonia | EN 16931/Peppol; national XML remains permitted | Profile/ecosystem and national syntax option | EN 16931 is used for structured exchange; no separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108883/eInvoicing+in+Estonia) | No national configuration listed |
+| Finland | Finvoice 3.0; TEAPPSXML 3.0; UBL/CII/Peppol | National syntaxes and exchange profiles | National syntaxes coexist with EN 16931-compatible UBL/CII exchange | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108884/eInvoicing+in+Finland) | No national configuration listed |
+| France | French CIUS over UBL/CII; Factur-X | National profile and hybrid container | EN 16931 CIUS; Factur-X embeds CII in PDF/A-3 | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108885/eInvoicing+in+France) | No national configuration listed |
+| Germany | XRechnung over UBL/CII; Factur-X/ZUGFeRD | National CIUS and hybrid container | XRechnung is an EN 16931 CIUS; Factur-X/ZUGFeRD embeds CII in PDF/A-3 | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108886/eInvoicing+in+Germany) | XRechnung configurations listed |
+| Greece | Peppol BIS Billing 3.0 over UBL; myDATA | Profile/syntax and tax-reporting system | Peppol is EN 16931-based; myDATA is reporting, not an invoice syntax | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108887/eInvoicing+in+Greece) | No national configuration listed |
+| Hungary | Structured exchange/Peppol options; NAV XML | Exchange profile and tax-reporting syntax | NAV Online Invoice is reporting; no separate EN 16931 CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108888/eInvoicing+in+Hungary) | No national configuration listed |
+| Ireland | Peppol BIS Billing 3.0 over UBL/CII | Cross-border profile and syntaxes | EN 16931 profile; no separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108889/eInvoicing+in+Ireland) | No national configuration listed |
+| Italy | FatturaPA | National XML syntax and clearance ecosystem | National syntax aligned with EN 16931 concepts; SDI is the transport/clearance platform | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108890/eInvoicing+in+Italy) | No national configuration listed |
+| Latvia | EN 16931/Peppol structured exchange | Profile/ecosystem | No separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108891/eInvoicing+in+Latvia) | No national configuration listed |
+| Lithuania | EN 16931/Peppol structured exchange; SABIS | Profile/ecosystem and platform | EN 16931-based structured data; SABIS is a platform | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108892/eInvoicing+in+Lithuania) | No national configuration listed |
+| Luxembourg | Peppol BIS Billing 3.0 over UBL/CII | Cross-border profile and syntaxes | EN 16931 profile; no separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108893/eInvoicing+in+Luxembourg) | No national configuration listed |
+| Malta | Peppol BIS Billing 3.0 over UBL | Cross-border profile and syntax | EN 16931 profile; no separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108894/eInvoicing+in+Malta) | No national configuration listed |
+| Netherlands | NLCIUS, UBL-OHNL, SI-UBL | National profiles over UBL | EN 16931-compatible national UBL profiles | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108895/eInvoicing+in+The+Netherlands) | No national configuration listed |
+| Poland | Peppol BIS with Polish extensions; KSeF/PEF | Profile/extensions and platforms | Peppol is EN 16931-based; KSeF and PEF are exchange platforms/specifications | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108896/eInvoicing+in+Poland) | No national configuration listed |
+| Portugal | CIUS-PT over UBL/CII | National profile and XML syntaxes | EN 16931 CIUS/profile | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108897/eInvoicing+in+Portugal) | No national configuration listed |
+| Romania | RO_CIUS over UBL/CII XML | National profile and XML syntaxes | EN 16931 CIUS/profile; RO e-Factura is the exchange/reporting system | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108898/eInvoicing+in+Romania) | No national configuration listed |
+| Slovakia | UBL/CII and planned Peppol solution | XML syntaxes and planned exchange profile | EN 16931-compatible options; no named national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108899/eInvoicing+in+Slovakia) | No national configuration listed |
+| Slovenia | e-SLOG 2.0; EN 16931/Peppol | National syntax and exchange profiles | e-SLOG interoperates with EN 16931/Peppol where the selected profile supports it | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108900/eInvoicing+in+Slovenia) | No national configuration listed |
+| Spain | Facturae | National XML syntax; FACe is a platform | Separate national syntax; EN 16931 compatibility depends on the selected implementation | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108901/eInvoicing+in+Spain) | No national configuration listed |
+| Sweden | Peppol BIS Billing 3.0 over UBL; SFTI guidance | Cross-border profile and sector guidance | EN 16931 profile; no separate national CIUS identified | [Commission factsheet](https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108902/eInvoicing+in+Sweden) | No national configuration listed |
 
----
+This inventory does not imply that the project validates any listed national syntax. The declared project conformance values and their implementation status are documented in the table below and in the [validation configuration matrix](#validation-configurations).
 
-### **CII (Cross-Industry Invoice) Validation** (UN/CEFACT Standard)
+| Variation | Role | Declared project value / status |
+## Detailed Validation Configurations and Formats
 
-**Overview:** CII is a UN/CEFACT standard used internationally for e-invoicing. It provides a simpler, lightweight alternative to full UBL and is increasingly adopted in Europe.
+The repositories in the country blocks below are evidence sources, not a claim that `Esi.OpenEN16931` already executes every listed artefact. A country-specific entry requires an identifiable national syntax, CIUS, extension, schema, Schematron/XSLT rule set or national executable rule implementation. CEN, OASIS UBL/CII and Peppol BIS are listed once as shared dependencies and are deliberately not repeated as national projects.
 
-**Source & Rules:**
-- **Sub-module:** `itplr-kosit/validator-configuration-cii`
-- **Repository:** [itplr-kosit/validator-configuration-cii](https://github.com/itplr-kosit/validator-configuration-cii)
-- **Schemas:** XSDs for CII 16B (Cross Industry Invoice 2013 version)
-- **Business Rules:** Schematron rules for both "uncoupled" and "coupled" scenarios
+### Common dependencies
 
-**Key Validation Features:**
-- International UN/CEFACT data structures validation
-- Support for various international tax and trade terms
-- Handling of CII uncoupled profile (increasingly used in Europe)
-- Minimal business logic compared to UBL-based formats
-- Fast validation with fewer mandatory fields
+- [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931) supplies shared EN 16931 UBL/CII schemas and rules. Examples include `ubl/schematron/EN16931-UBL-validation.sch` and `cii/schematron/EN16931-CII-validation.sch`.
+- [OpenPEPPOL/peppol-bis-invoice-3](https://github.com/OpenPEPPOL/peppol-bis-invoice-3) supplies shared Peppol BIS Billing rules. A Peppol repository is not a national validator merely because a country uses Peppol.
+- [itplr-kosit/validator-configuration-bis](https://github.com/itplr-kosit/validator-configuration-bis) is a shared BIS execution configuration. Its UBL XSD and `CEN-EN16931-UBL.xslt`/`PEPPOL-EN16931-UBL.xslt` files are common dependencies, not country artefacts.
+- `origins/` is read-only. Paths below are references to checked-out upstream material and must not be modified.
 
-**Test Suite:** KoSIT CII test suite included in submodule
+### Austria (AT)
 
----
+- **Syntax/profile:** Austrian `ebInterface`; Austrian B2G rules; UBL/Peppol is a separate shared route.
+- **Country-specific projects:** [Stoicera/einvoice_at](https://github.com/Stoicera/einvoice_at) contains `validation/src/main/resources/schematron/at-b2g-ebinterface-6.1.sch`, `validation/src/main/java/com/stoicera/einvoice/validation/stage/BusinessRuleStage.java` and `AT-B2G-01` through `AT-B2G-05`. The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository also contains the `phive-rules-ebinterface` national module.
+- **Schemas/rules/tests:** ebInterface XSDs are supplied by the `ph-ebinterface` dependency; PHIVE tests are under `phive-rules-ebinterface/src/test/resources/external/test-files/v61/`. Austrian project tests are under `validation/src/test/java/.../SchematronStageTest.java` and `validation/src/test/resources/corpus/`.
+- **Status:** National ebInterface/AT-B2G evidence is available. `austriapro/ebinterface-ubl-mapping` remains mapping only; Peppol artefacts are shared dependencies.
 
-### **Factur-X French Validation** (UBL + CII Hybrid for France)
-
-**Overview:** Factur-X is a French national standard that combines UBL content with CII packaging metadata, specifically designed for the French e-invoicing law.
+### Belgium (BE)
 
-**Source & Rules:**
-- **Sub-module:** `gflohr/e-invoice-eu`
-- **Repository:** [gflohr/e-invoice-eu](https://github.com/gflohr/e-invoice-eu)
-- **Schemas:** French Factur-X schemas (UBL + CII hybrid)
-- **Business Rules:** French tax law rules (`.xsl` files)
-
-**Key Validation Features:**
-- UBL content with French-specific extensions
-- CII packaging metadata for facture type identification
-- French VAT calculation validation
-- Specific checks for French public-sector invoicing
+- **Syntax/profile:** Belgian e-FFF / UBL.BE over UBL 2.1.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-ublbe`; it is not itself a Belgian-only repository.
+- **Rules/tests:** `phive-rules-ublbe/src/main/resources/external/schematron/ublbe/en16931/v1.31/GLOBALUBL.BE.xslt`; Belgian fixtures are under `phive-rules-ublbe/src/test/resources/external/test-files/en16931/v1.31/`.
+- **Status:** Belgian compiled XSLT and fixtures identified. No separate Belgian validator repository was identified.
 
----
-
-### **ebInterface Austria Validation** (UBL + Austrian Business Rules)
-
-**Overview:** ebInterface is the Austrian national e-invoicing standard based on UBL with Austrian-specific business rules and mappings.
-
-**Source & Rules:**
-- **Sub-module:** `austriapro/ebinterface-ubl-mapping`
-- **Repository:** [austriapro/ebinterface-ubl-mapping](https://github.com/austriapro/ebinterface-ubl-mapping)
-- **Schemas:** UBL-based with Austrian extensions
-- **Business Rules:** Austrian business rules (`.xsl` files)
+### Bulgaria (BG)
 
-**Key Validation Features:**
-- Austrian VAT system validation
-- ebInterface-specific business term mappings
-- Austrian public-sector invoicing requirements
+- **Syntax/profile:** UBL/CII or Peppol routes documented for structured exchange; platform rules are separate.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after checking the local submodules and the online candidates reviewed.
+- **Schemas/rules/tests:** No Bulgarian national XSD, `.sch` or `.xsl`/`.xslt` path was verified in this workspace.
+- **Status:** Use the shared EN 16931 and selected Peppol layers only; do not label them Bulgarian rules.
 
----
+### Croatia (HR)
 
-### **Validation Pipeline Per Format**
+- **Syntax/profile:** UBL 2.1 under Croatian CIUS/EXT 2025 and Fiskalizacija 2.0.
+- **Country-specific projects:** [verifaktura/verifaktura](https://github.com/verifaktura/verifaktura) registers `@verifaktura/cius-hr` and compiles the official `HR-CIUS-EXT-EN16931-UBL.sch`; [stboris/laravel-eracun](https://github.com/stboris/laravel-eracun) implements the Croatian overlay with `HR-BR-*` rules. The shared PHIVE module is `phive-rules-eracun`.
+- **Schemas/rules/tests:** PHIVE compiled rule: `phive-rules-eracun/src/main/resources/external/schematron/1.0.3/HR-CIUS-EXT-EN16931-UBL.xslt`. The online validator uses `packages/cius-hr/sef/hr-cius-ext-ubl.sef.json` generated from the official source. The PHP project records `research/schematron/HR-CIUS-EXT-EN16931-UBL.sch`, `research/schematron/HR-CIUS-EXT-EN16931-UBL-codes.sch`, `research/xsd/`, `research/fixtures/` and `src/Validation/Rules/`.
+- **Status:** Strong national evidence exists, but the Croatian overlay is an additional layer and does not replace EN 16931 base validation.
 
-When validating an invoice, the system applies these sources in sequence:
+### Cyprus (CY)
 
-1. **XSD Schema Validation** → Ensures XML structure matches format specification  
-2. **Schematron Rules** → Enforces business logic (mandatory fields, tax calculations)  
-3. **Country-Specific Rules** → Applies local regulations if invoice is for public sector  
-4. **Test Suite Verification** → Compares against known-good/bad test cases
+- **Syntax/profile:** Peppol BIS Billing 3.0 over UBL is the identified structured route.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Cypriot national XSD or Schematron/XSLT path was verified.
+- **Status:** Shared EN 16931/Peppol rules only; no national validator claim.
 
----
+### Czechia (CZ)
 
-## Schema Loading Strategies
+- **Syntax/profile:** ISDOC 6.0.2; UBL/Peppol is a separate route.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-isdoc`.
+- **Schemas/rules/tests:** `phive-rules-isdoc/src/main/resources/external/schemas/isdoc/6.0.2/isdoc-invoice-6.0.2.xsd`, `isdoc-commondocument-6.0.2.xsd`, `isdoc-invoice-dsig-6.0.2.xsd`, `isdoc-commondocument-dsig-6.0.2.xsd` and `isdoc-manifest-6.0.2.xsd`; Schematron source: `phive-rules-isdoc/src/test/resources/external/rule-source/6.0.2/isdoc-6.0.2.sch`.
+- **Status:** National syntax, schema, rule source and tests identified. No separate Czech validator repository was identified.
 
-When validating an invoice, the system applies these sources in sequence:
+### Denmark (DK)
 
-1. **XSD Schema Validation** → Ensures XML structure matches format specification  
-2. **Schematron Rules** → Enforces business logic (mandatory fields, tax calculations)  
-3. **Country-Specific Rules** → Applies local regulations if invoice is for public sector  
-4. **Test Suite Verification** → Compares against known-good/bad test cases
+- **Syntax/profile:** OIOUBL, a Danish UBL profile; NemHandel and Peppol transport rules are separate.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-oioubl`.
+- **Rules:** `phive-rules-oioubl/src/main/resources/external/schematron/oioubl/2.0.2/OIOUBL_Invoice_Schematron.xsl` and `.../3.0.1/xslt/OIOUBL-Invoice.xslt`; source rules for 3.0.1 are under `phive-rules-oioubl/src/test/resources/external/rule-source/oioubl/3.0.1/`.
+- **Status:** Danish profile rules identified. The invoice XSD path was not verified in the checked-out module, so schema completeness remains partial.
 
-### Schema Repository Details
+### Estonia (EE)
 
-#### `itplr-kosit/validator-configuration-xrechnung` *(Most Important)*
-- **Location:** `origins/itplr-kosit/validator-configuration-xrechnung`
-- **Contents:**
-  - `/resources/xrechnung/` — XRechnung DE schemas (CIUS, Extension, CVD)
-  - `/resources/ubl/` — UBL-based Factur-X schemas
-  - `/rules/de/` — German business rules in Schematron format
-  - `/test_data/cius_de/` — Official test invoices from KoSIT
-- **Update Frequency:** Every 2–3 months (official releases)
-- **License:** Apache 2.0 ✅
+- **Syntax/profile:** Estonian national XML alongside EN 16931/Peppol routes.
+- **Country-specific project/module:** The shared PHIVE repository lists `phive-rules-estonian`.
+- **Schemas/rules:** Local evidence is documentation and syntax material under `phive-rules-estonian/docs/v1.2/`, including `e-invoice_ver1.2.EN.xsd.xml` and the Estonian syntax-binding PDFs. No executable `.sch`, `.xsl` or `.xslt` was found in the initial module search.
+- **Status:** National syntax documentation identified, but no executable national validator artefact was verified. No separate Estonian validator repository was identified.
 
-#### `OpenPEPPOL/peppol-bis-invoice-3`
-- **Location:** `origins/OpenPEPPOL/peppol-bis-invoice-3` or online source
-- **Contents:**
-  - `/resources/billing/en/` — PEPPOL BIS Billing schemas (UBL-based)
-  - `/rules/` — Business rules for cross-border EU transactions
-  - `/test_data/` — Test invoices from OpenPEPPOL consortium
-- **Update Frequency:** Quarterly
-- **License:** CC-BY-SA 4.0 ✅
+### Finland (FI)
 
-#### `stephanstapel/ZUGFeRD-csharp`
-- **Location:** `origins/stephanstapel/ZUGFeRD-csharp` or NuGet package
-- **Contents:**
-  - `/resources/zugferd/` — ZUGFeRD packaging schemas (PDF/A-3)
-  - `/rules/xades/` — XML Advanced Electronic Signatures validation
-  - `/test_data/` — Test PDFs with embedded XML
-- **Update Frequency:** Annually
-- **License:** Apache 2.0 ✅
+- **Syntax/profile:** Finvoice 3.0 and TEAPPSXML 3.0; UBL/CII/Peppol is a separate shared route.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-finvoice` and `phive-rules-teapps`.
+- **Schemas/tests:** `phive-rules-finvoice/src/main/resources/external/schemas/Finvoice3.0.xsd`; `phive-rules-teapps/src/main/resources/external/schemas/teappsxmlv30_schema_invoices_0.xsd`. The modules contain test data; no validation Schematron was found, and `docs/3.0/FinvoiceEnglanti.xsl` is a presentation stylesheet.
+- **Status:** National XSD validation evidence is available; business-rule artefacts are incomplete. No separate Finnish validator repository was identified.
 
-#### `gflohr/e-invoice-eu`
-- **Location:** `origins/gflohr/e-invoice-eu`
-- **Contents:**
-  - `/resources/fr/` — French Factur-X schemas (UBL + CII hybrid)
-  - `/rules/french_tax_laws/` — French-specific tax calculations
-- **Update Frequency:** Annually
-- **License:** MIT ✅
+### France (FR)
 
-### Business Rules by Country
+- **Syntax/profile:** French CTC/Flux 2 CIUS over UBL/CII; Factur-X is a PDF/A-3 container with embedded CII.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-france`.
+- **Rules/tests:** Raw sources are under `phive-rules-france/src/test/resources/external/rule-source/ctc/1.4.0/`, including `20260630_EXTENDED-CTC-FR-UBL-V1.4.0.sch` and the CII, Flux2 and CDV sources. Compiled rules are under `phive-rules-france/src/main/resources/external/schematron/ctc/1.4.0/xslt/`; tests are under `phive-rules-france/src/test/resources/external/test-files/ctc/1.4.0/`.
+- **Status:** French national Schematron/XSLT and fixtures identified. The [atgp/factur-x](https://github.com/atgp/factur-x) repository supplies container/CII profile schemas, not the French CTC validator.
 
-| Country | Mandatory Business Rules | Optional Business Rules |
-|---------|--------------------------|-------------------------|
-| Germany (DE) | Tax calculation, VAT categories, payment terms, mandatory fields per BT-* | Invoice type codes, document references |
-| France (FR) | French tax law calculations, UBL-specific rules, Factur-X hybrid validation | PEPPOL BIS 3.0 additional checks |
-| Italy (IT) | Italian VAT system (IVA), Factur-X mandatory for all transactions | Cross-border PEPPOL rules |
-| Netherlands (NL) | Dutch VAT codes (BTW), factuurtype, factuurnummer format | ZUGFeRD packaging validation |
-| Spain (ES) | Spanish XRechnung extensions, IVA calculations, BT-* fields | Factur-X optional checks |
+### Germany (DE)
 
-### Schema Loading Strategies
+- **Syntax/profile:** XRechnung CIUS over UBL/CII, including German extensions and CVD data.
+- **Country-specific projects/modules:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains the German `phive-rules-xrechnung` module. The [itplr-kosit/validator-configuration-xrechnung](https://github.com/itplr-kosit/validator-configuration-xrechnung) repository provides the KOSIT execution configuration, and its [xrechnung-testsuite](https://github.com/itplr-kosit/xrechnung-testsuite) provides the official test suite.
+- **Rules/tests:** PHIVE contains compiled `phive-rules-xrechnung/src/main/resources/external/schematron/3.0.2/XRechnung-UBL-validation.xslt` and `XRechnung-CII-validation.xslt`, with separate rule patterns for XRechnung, the UBL extension and CVD. Fixtures are grouped under `phive-rules-xrechnung/src/test/resources/external/test-files/3.0.2/ubl-inv/`, `ubl-inv-ext/`, `cii/` and `cii-ext/`; the fixtures carry the German `urn:xeinkauf.de:kosit:xrechnung_3.0` customization identifiers.
+- **Status:** German national validation rules are verified in the PHIVE module and in the KOSIT configuration/test ecosystem. The shared EN 16931 and UBL/CII schema layers remain prerequisites. Factur-X/ZUGFeRD remains a container and is not an alternative German XML syntax.
 
-1. **Embedded Resources** (Production)
-   - Schemas compiled into DLL at build time
-   - Pros: No external dependencies, works offline
-   - Cons: Large binary size, updates require recompilation
+### Greece (GR)
 
-2. **Git Submodules** (Development)
-   - Direct reference to `origins/` repositories
-   - Pros: Always latest schemas, easy switching between formats
-   - Cons: Requires Git setup, submodule management overhead
+- **Syntax/profile:** Peppol BIS Billing 3.0 over UBL; myDATA is reporting, not a national invoice validator.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Greek national XSD or Schematron/XSLT path was verified.
+- **Status:** Shared EN 16931/Peppol rules only; myDATA integration must not be counted as invoice-rule evidence.
 
-3. **Network Download** (Fallback)
-   - Downloads from official sources on-demand
-   - Pros: Latest schemas without Git
-   - Cons: Requires internet, network failures possible
+### Hungary (HU)
 
-4. **ZIP Package Extraction** (Dynamic)
-   - Extracts KoSIT ZIP archives at runtime
-   - Pros: Single file distribution, no Git needed
-   - Cons: Manual updates required
+- **Syntax/profile:** NAV Online Számla (OSA) reporting XML; Peppol/UBL is a separate invoice route.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-osa`.
+- **Schemas:** `phive-rules-osa/src/main/resources/external/schemas/v3.0/invoiceData.xsd`, `invoiceBase.xsd`, `invoiceApi.xsd`, `invoiceAnnulment.xsd`, `common.xsd` and `serviceMetrics.xsd`; version 2.0 equivalents are under `.../schemas/v2.0/`.
+- **Status:** Hungarian reporting schemas are verified, but this is not evidence of an EN 16931 national invoice validator. No separate Hungarian invoice validator repository was identified.
 
----
+### Ireland (IE)
 
-## Workflow
+- **Syntax/profile:** Peppol BIS Billing 3.0 over UBL/CII.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Irish national XSD or Schematron/XSLT path was verified.
+- **Status:** Shared EN 16931/Peppol rules only.
 
-1. **Schema Validation**: Validates the XML structure against the relevant `.xsd` file.
-2. **Schematron Validation**: Applies business rules using `.xsl` files to check for correct data content, mandatory fields, and specific business logic (e.g., tax calculations).
-3. **Reporting**: Generates a detailed validation report highlighting errors, warnings, and information.
+### Italy (IT)
 
-## Documentation
+- **Syntax/profile:** FatturaPA XML; Italian Peppol extensions are a separate UBL profile.
+- **Country-specific project/module:** The shared PHIVE repository contains `phive-rules-fatturapa` and `phive-rules-peppol-italy`.
+- **Rules/tests:** Italian Peppol rules include `phive-rules-peppol-italy/src/main/resources/external/schematron/peppol-italy/3.2.1/invoice/AGID-EN16931-UBL - PEPPOL ITA.xslt`, `AGID-PEPPOL-T01.xslt` and related order/despatch rules; invoice fixtures are under `phive-rules-peppol-italy/src/test/resources/external/test-files/3.2.1/invoice/`. `phive-rules-fatturapa` registers runtime validation but contains no verified local FatturaPA XSD or Schematron.
+- **Status:** Italian Peppol national rules are verified; FatturaPA artefact coverage is incomplete. Do not substitute an unrelated converter XSD.
 
-Detailed information about each type, including source links, specific rules, and schema locations, can be found in the individual `.md` files in this folder.
+### Latvia (LV)
+
+- **Syntax/profile:** EN 16931/Peppol structured exchange.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Latvian national XSD or Schematron/XSLT path was verified.
+- **Status:** Shared EN 16931/Peppol rules only.
+
+### Lithuania (LT)
+
+- **Syntax/profile:** EN 16931/Peppol and SABIS exchange requirements.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Lithuanian national XSD or Schematron/XSLT path was verified.
+- **Status:** SABIS is a platform; it is not counted as a validator without executable national rule artefacts.
+
+### Luxembourg (LU)
+
+- **Syntax/profile:** Peppol BIS Billing 3.0 over UBL/CII.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Luxembourg national XSD or Schematron/XSLT path was verified.
+- **Status:** Shared EN 16931/Peppol rules only.
+
+### Malta (MT)
+
+- **Syntax/profile:** Peppol BIS Billing 3.0 over UBL.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Maltese national XSD or Schematron/XSLT path was verified.
+- **Status:** Shared EN 16931/Peppol rules only.
+
+### Netherlands (NL)
+
+- **Syntax/profile:** NLCIUS, UBL-OHNL, SI-UBL and energy-sector profiles over UBL.
+- **Country-specific project/module:** The shared PHIVE repository contains national/sector modules such as `phive-rules-energieefactuur`; this is not a general Dutch CIUS validator repository.
+- **Schemas:** `phive-rules-energieefactuur/src/main/resources/external/schemas/energieefactuur/SEeF_UBLExtension_v3.1.0.xsd` and earlier versioned schemas.
+- **Status:** Dutch sector extension evidence exists. No general NLCIUS/UBL-OHNL/SI-UBL validator repository was identified.
+
+### Poland (PL)
+
+- **Syntax/profile:** KSeF XML and Peppol with Polish extensions; these are distinct routes.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-ksef`.
+- **Schemas/tests:** `phive-rules-ksef/src/main/resources/external/schemas/3.0.0/StrukturyDanych_v10-0E.xsd` and `schemat.xsd`; versions 2.0.0 and 1.0.0 are also present. Version 1.0.0 includes `KodyKrajow_v9-0E.xsd` and `ElementarneTypyDanych_v9-0E.xsd`; fixtures are under `phive-rules-ksef/src/test/resources/external/test-files/fa1`, `fa2` and `fa3`.
+- **Status:** Polish KSeF schema validation is verified. It must not be confused with generic Peppol validation.
+
+### Portugal (PT)
+
+- **Syntax/profile:** CIUS-PT over UBL/CII.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-cius-pt`.
+- **Rules:** `phive-rules-cius-pt/src/main/resources/external/schematron/2.1.1/urn_feap.gov.pt_CIUS-PT_2.1.1.xslt` and the 2.0.0 equivalent.
+- **Status:** Portuguese compiled CIUS XSLT is verified. No separate Portuguese validator repository was identified.
+
+### Romania (RO)
+
+- **Syntax/profile:** RO_CIUS / RO e-Factura over UBL.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-cius-ro`.
+- **Rules/tests:** Raw sources include `phive-rules-cius-ro/src/test/resources/external/rule-source/1.0.9/cius-ro/RO16931-rules.sch` and `EN16931-CIUS_RO-UBL-validation.sch`; compiled rules include `phive-rules-cius-ro/src/main/resources/external/schematron/1.0.9/EN16931-CIUS_RO-UBL-validation.xslt` and `ROeFactura-UBL-validation-Invoice_v1.0.9.xslt`; XML fixtures are under `phive-rules-cius-ro/src/test/resources/external/test-files/1.0.9/`.
+- **Status:** Romanian national Schematron/XSLT and test data are verified. The overlay still requires the shared EN 16931 base layer.
+
+### Slovakia (SK)
+
+- **Syntax/profile:** UBL/CII EN 16931-compatible route; Peppol deployment is separate and evolving.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No Slovak national XSD or Schematron/XSLT path was verified.
+- **Status:** Shared EN 16931/Peppol rules only.
+
+### Slovenia (SI)
+
+- **Syntax/profile:** e-SLOG 2.0 and EN 16931/Peppol interoperability.
+- **Country-specific GitHub project:** No country-specific GitHub validator identified after local and reviewed online searches.
+- **Schemas/rules/tests:** No e-SLOG XSD plus executable Schematron/XSLT repository was verified.
+- **Status:** e-SLOG is documented as a national syntax, but no qualifying GitHub validator was identified.
+
+### Spain (ES)
+
+- **Syntax/profile:** Facturae XML; FACe is a gateway, not the syntax.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-facturae`.
+- **Schemas/tests:** `phive-rules-facturae/src/main/resources/external/schemas/Facturaev3_2.xsd`, `Facturaev3_2_1.xsd`, `Facturaev3_2_2.xsd` and older versions; XML and `.xsig` fixtures are under `phive-rules-facturae/src/test/resources/external/test-files/`.
+- **Status:** Spanish national schema and test evidence is verified; no validation Schematron was found in the module.
+
+### Sweden (SE)
+
+- **Syntax/profile:** Svefaktura 1.0; Peppol BIS is a separate shared route.
+- **Country-specific project/module:** The shared [phax/phive-rules](https://github.com/phax/phive-rules) repository contains `phive-rules-svefaktura`.
+- **Schemas/rules:** `phive-rules-svefaktura/src/main/resources/external/schemas/1.0/maindoc/SFTI-BasicInvoice-1.0.xsd`, `SFTI-ObjectEnvelope-1.0.xsd` and `svenfaktura-1.0-sch.xslt`, with supporting common and code-list XSDs in the same directory.
+- **Status:** Swedish national syntax schemas and compiled rules are verified. No separate Swedish validator repository was identified.
+
+### Validation Pipeline Per Format
+When validating an invoice, apply the available artefacts in this order:
+
+1. **XSD schema validation**: check the selected XML vocabulary and version.
+2. **EN 16931 semantic rules**: apply the shared model, syntax and code-list rules.
+3. **Profile or CIUS rules**: apply Peppol BIS or the country-specific rules documented in the relevant country block.
+4. **National extension or reporting rules**: apply these only when the selected national route requires them; reporting schemas are not invoice syntax rules.
+5. **Container and signature checks**: for Factur-X/ZUGFeRD, validate PDF/A-3, the embedded CII relationship and signatures separately from the XML invoice rules.
+6. **Test fixtures**: verify the implementation against the documented positive and negative samples.

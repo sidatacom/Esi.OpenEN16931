@@ -1,0 +1,154 @@
+{
+  "packageGovernance": {
+    "totalDistinctPackages": 2,
+    "totalVersionDriftInstances": 0,
+    "targetFramework": "net10.0",
+    "packages": [
+      {
+        "name": "Microsoft.NETFramework.ReferenceAssemblies",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "1.0.3",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "1.0.3",
+            "projects": [
+              "OutSmart.DAXon"
+            ],
+            "isRecommended": true
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.NETFramework.ReferenceAssemblies.net472",
+        "totalProjectCount": 1,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "1.0.3",
+        "isCompatible": false,
+        "versions": [
+          {
+            "version": "1.0.3",
+            "projects": [
+              "OutSmart.DAXon"
+            ],
+            "isRecommended": true
+          }
+        ]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "OutSmart.DAXon",
+      "path": "OutSmart.DAXon.csproj",
+      "isSdk": true,
+      "currentFrameworks": [
+        "net472"
+      ],
+      "targetFramework": "net10.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "Microsoft.NETFramework.ReferenceAssemblies",
+            "version": "1.0.3",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "OutSmart.DAXon.csproj"
+              }
+            ],
+            "compatibility": "unknown"
+          },
+          {
+            "name": "Microsoft.NETFramework.ReferenceAssemblies.net472",
+            "version": "1.0.3",
+            "isTransitive": true,
+            "isGlobal": false,
+            "isImplicit": false,
+            "compatibility": "unknown",
+            "transitiveChain": [
+              "Microsoft.NETFramework.ReferenceAssemblies \u003E Microsoft.NETFramework.ReferenceAssemblies.net472"
+            ]
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "System.Drawing",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.Drawing.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.Data.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.Xml.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.Xml.Linq.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Numerics",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.Numerics.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Runtime.Serialization",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.Runtime.Serialization.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.Core.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.IO.Compression.FileSystem",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\System.IO.Compression.FileSystem.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "mscorlib",
+            "version": "4.0.0.0",
+            "isTransitive": true,
+            "physicalPath": "C:\\Users\\alexander.hailfinger\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\build\\.NETFramework\\v4.7.2\\mscorlib.dll",
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [],
+        "frameworkReferences": []
+      }
+    }
+  ]
+}

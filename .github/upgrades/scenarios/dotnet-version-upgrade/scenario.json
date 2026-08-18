@@ -1,0 +1,16 @@
+{
+  "scenarioId": "dotnet-version-upgrade",
+  "operationId": "1e46f67f-e6f9-403b-ac86-b86746e3e3af",
+  "description": "Upgrade .NET projects to newer .NET versions, including guidance on current release status, support lifecycle (LTS/STS), and recommended upgrade targets.",
+  "startTime": "2026-08-18T07:06:14.6722951Z",
+  "lastUpdateTime": "2026-08-18T07:21:43.6212091Z",
+  "properties": {
+    "UpgradeTargetFramework": "net10.0",
+    "taskStates": {
+      "01-daxon-framework-upgrade": "Completed",
+      "01.01-daxon-target-and-restore": "InProgress",
+      "02-final-validation": "Completed"
+    }
+  },
+  "folderPath": ""
+}

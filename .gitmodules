@@ -1,3 +1,7 @@
+[submodule "origins/sashokfestival/DAXon"]
+path = origins/sashokfestival/DAXon
+url = https://github.com/ahSidata/DAXon.git
+
 [submodule "origins/stephanstapel/ZUGFeRD-csharp"]
 path = origins/stephanstapel/ZUGFeRD-csharp
 url = https://github.com/stephanstapel/ZUGFeRD-csharp.git

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Esi.OpenEN16931.Validation.Interfaces;
 
-public interface IXsltEngine
+public interface IXsltProcessor
 {
     /// <summary>
     /// Applies the given XSLT stream to the input XML and returns the transformed XML document.

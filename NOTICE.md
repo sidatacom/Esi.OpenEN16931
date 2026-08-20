@@ -25,6 +25,7 @@ The following table lists the upstream projects referenced as submodules and the
 
 | Submodule path | Repository | License |
 |---|---|---|
+| `origins/sashokfestival/DAXon` | [ahSidata/DAXon](https://github.com/ahSidata/DAXon) (fork of sashokfestival/DAXon) | MPL-2.0 |
 | `origins/validator` | [itplr-kosit/validator](https://github.com/itplr-kosit/validator) | Apache-2.0 |
 | `origins/validator-configuration-xrechnung` | [itplr-kosit/validator-configuration-xrechnung](https://github.com/itplr-kosit/validator-configuration-xrechnung) | Apache-2.0 |
 | `origins/eInvoicing-EN16931` | [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931) | EUPL-1.2 |

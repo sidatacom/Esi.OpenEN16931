@@ -4,6 +4,7 @@ Quelle: `.gitmodules` im Workspace. Diese Datei liegt absichtlich außerhalb von
 
 | Submodul | Workspace-Pfad | URL |
 |---|---|---|
+| origins/sashokfestival/DAXon | origins/sashokfestival/DAXon | https://github.com/ahSidata/DAXon.git |
 | origins/stephanstapel/ZUGFeRD-csharp | origins/stephanstapel/ZUGFeRD-csharp | https://github.com/stephanstapel/ZUGFeRD-csharp.git |
 | origins/itplr-kosit/validator | origins/itplr-kosit/validator | https://github.com/itplr-kosit/validator.git |
 | origins/itplr-kosit/validator-configuration-xrechnung | origins/itplr-kosit/validator-configuration-xrechnung | https://github.com/itplr-kosit/validator-configuration-xrechnung.git |

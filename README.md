@@ -29,9 +29,12 @@ Esi.OpenEN16931 is a community-driven collection of implementations, validators,
 
 The repository tracks upstream projects as git submodules, ships documentation and helper scripts (for example, to add submodules), and simplifies finding, comparing, and reusing existing solutions.
 
-## Extended ecosystem catalog — Submodules (104)
-This list is generated directly from the repository's `.gitmodules` file and reflects the upstream repositories included as git submodules under the `origins/` directory. The list is presented in the order found in `.gitmodules` and deduplicated.
-MASTER PROJECT LIST (1-104)
+## Extended ecosystem catalog — Submodules (105)
+This list is generated from the repository's `.gitmodules` file and reflects the repositories included as git submodules under the `origins/` directory. The current DAXon upgrade is temporarily sourced from the `ahSidata/DAXon` fork; the remaining upstream entries are presented in their existing catalog order.
+CURRENT WORKING FORK
+1. ahSidata/DAXon
+
+MASTER UPSTREAM PROJECT LIST (104)
 1. Securibox/facturx
 2. koozala/pacioli
 3. Docentric/docentric-e-invoice-validator

@@ -2,15 +2,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml;
-#if !NET10_0_OR_GREATER
-using System.Xml.Xsl;
-#endif
 using Esi.OpenEN16931.Validation.Interfaces;
 using Esi.OpenEN16931.Models;
+using Esi.OpenEN16931.Core;
 using System;
-#if NET10_0_OR_GREATER
 using OutSmart.DAXon.Api;
-#endif
 
 namespace Esi.OpenEN16931.Validation.Providers;
 
@@ -19,9 +15,7 @@ namespace Esi.OpenEN16931.Validation.Providers;
 /// </summary>
 public class XsltProcessor : IXsltProcessor
 {
-#if NET10_0_OR_GREATER
     private static readonly Processor DaxonProcessor = new Processor();
-#endif
     private readonly ISchemaProvider _schemaProvider;
 
     /// <summary>
@@ -58,7 +52,6 @@ public class XsltProcessor : IXsltProcessor
             throw new InvalidOperationException("The schema provider returned no XSLT stream.");
         }
 
-#if NET10_0_OR_GREATER
         var executable = DaxonProcessor.NewXsltCompiler().Compile(xsltStream, "urn:esi:stylesheet");
         using var inputWriter = new StringWriter();
         document.Save(inputWriter);
@@ -66,22 +59,35 @@ public class XsltProcessor : IXsltProcessor
         var input = DaxonProcessor.NewDocumentBuilder().Build(inputReader, "urn:esi:input");
         using var outputWriter = new StringWriter();
         var transformer = executable.Load30();
+        transformer.SetGlobalContextItem(input, false);
         transformer.ApplyTemplates(input, DaxonProcessor.NewSerializer(outputWriter));
         var transformedDocument = new XmlDocument();
         transformedDocument.LoadXml(outputWriter.ToString());
         return transformedDocument;
-#else
-        var transformer = new XslCompiledTransform();
-        using var reader = XmlReader.Create(xsltStream);
-        transformer.Load(reader);
+    }
 
-        var transformedDocument = new XmlDocument();
-        using var outputWriter = new StringWriter();
-        using var xmlWriter = XmlWriter.Create(outputWriter, transformer.OutputSettings);
-        transformer.Transform(document, xmlWriter);
-        xmlWriter.Flush();
-        transformedDocument.LoadXml(outputWriter.ToString());
-        return transformedDocument;
-#endif
+    /// <summary>
+    /// Applies a Schematron stylesheet and converts its SVRL output into a structured report step.
+    /// </summary>
+    /// <param name="document">The invoice XML document to validate.</param>
+    /// <param name="xsltStream">The DAXon-compatible Schematron stylesheet.</param>
+    /// <param name="stepId">The KoSIT-style validation step identifier.</param>
+    /// <param name="stepName">The human-readable validation step name.</param>
+    /// <returns>A structured report containing the parsed SVRL messages.</returns>
+    public ValidationReport TransformReport(XmlDocument document, Stream xsltStream, string stepId = "val-sch.1", string stepName = "Schematron validation")
+    {
+        if (document == null)
+        {
+            throw new ArgumentNullException(nameof(document));
+        }
+
+        if (xsltStream == null)
+        {
+            throw new ArgumentNullException(nameof(xsltStream));
+        }
+
+        var report = new ValidationReport();
+        ValidationReport.AddSchematronStep(Transform(document, xsltStream), stepId, stepName, report);
+        return report;
     }
 }

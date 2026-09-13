@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netstandard2.1;net10.0</TargetFrameworks>
+		<TargetFrameworks>net10.0;net472</TargetFrameworks>
 		<Version>18.0.0</Version>
 		<Authors>Stephan Stapel</Authors>
 		<Company>STwo Industries GmbH</Company>
@@ -52,8 +52,9 @@
 	  <Folder Include="Validation\Sources\Germany\Syntax\" />
 	  <Folder Include="Validation\Sources\Germany\Syntax\CII\References\" />
 	  <Folder Include="Validation\Sources\Germany\Syntax\UBL\" />
+	  <EmbeddedResource Include="Html\*.scriban" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+	<ItemGroup>
 	  <ProjectReference Include="..\..\origins\sashokfestival\DAXon\src\OutSmart.DAXon\OutSmart.DAXon.csproj" />
 	</ItemGroup>
 </Project>

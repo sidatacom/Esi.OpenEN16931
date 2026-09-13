@@ -1,0 +1,30 @@
+name: Germany validation tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  germany-validation:
+    name: Native DAXon Germany validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository and test data
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore validation test dependencies
+        run: dotnet restore tests/OpenEN16931.Validation.Test/OpenEN16931.Validation.Test.csproj
+
+      - name: Run Germany validation tests
+        run: dotnet test tests/OpenEN16931.Validation.Test/OpenEN16931.Validation.Test.csproj -c Release --no-restore

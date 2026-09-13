@@ -175,10 +175,25 @@
             <xsl:apply-templates/>
          </svrl:active-pattern>
          <xsl:apply-templates select="/" mode="M12"/>
+         <xsl:apply-templates select="/" mode="M13"/>
       </svrl:schematron-output>
    </xsl:template>
    <!--SCHEMATRON PATTERNS-->
    <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">EN16931 model bound to CII</svrl:text>
+   <xsl:template match="/" mode="M13">
+      <xsl:for-each select="//ram:DefinedTradeContact[ancestor::ram:SellerTradeParty and ram:PersonName and ram:DepartmentName]">
+         <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" id="CII-SR-465" role="error" test="not(ram:PersonName and ram:DepartmentName)">
+            <xsl:attribute name="location"><xsl:apply-templates select="." mode="schematron-get-full-path"/></xsl:attribute>
+            <svrl:text>Only one seller contact point name (BT-41) may be provided.</svrl:text>
+         </svrl:failed-assert>
+      </xsl:for-each>
+      <xsl:for-each select="//ram:DefinedTradeContact[ancestor::ram:BuyerTradeParty and ram:PersonName and ram:DepartmentName]">
+         <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" id="CII-SR-466" role="error" test="not(ram:PersonName and ram:DepartmentName)">
+            <xsl:attribute name="location"><xsl:apply-templates select="." mode="schematron-get-full-path"/></xsl:attribute>
+            <svrl:text>Only one buyer contact point name (BT-56) may be provided.</svrl:text>
+         </svrl:failed-assert>
+      </xsl:for-each>
+   </xsl:template>
    <!--PATTERN EN16931-CII-Model-->
    <!--RULE -->
    <xsl:template match="//ram:SpecifiedTradeAllowanceCharge" priority="1060" mode="M10">

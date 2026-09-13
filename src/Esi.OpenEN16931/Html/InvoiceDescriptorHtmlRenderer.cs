@@ -24,14 +24,25 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Esi.OpenEN16931.Core;
+using ModelsValidationResult = Esi.OpenEN16931.Models.ValidationResult;
 using Scriban;
 
 namespace Esi.OpenEN16931.Html
 {
     public class InvoiceDescriptorHtmlRenderer
     {
-        public static async Task<string> RenderAsync(Esi.OpenEN16931.Core.InvoiceDescriptor invoice)
+        /// <summary>
+        /// Renders an invoice as HTML.
+        /// </summary>
+        /// <param name="invoice">The invoice to render.</param>
+        /// <returns>The rendered HTML document.</returns>
+        public static async Task<string> RenderAsync(InvoiceDescriptor invoice)
         {
+            if (invoice == null)
+            {
+                throw new ArgumentNullException(nameof(invoice));
+            }
+
             string templateContent = _LoadEmbeddedResource("Simple.scriban");
             var template = Template.Parse(templateContent);
             var model = new
@@ -42,6 +53,90 @@ namespace Esi.OpenEN16931.Html
             string result = await template.RenderAsync(model, memberRenamer: member => member.Name);
                 return result;
             } // !RenderAsync()
+
+        /// <summary>
+        /// Renders a validation result as an HTML report.
+        /// </summary>
+        /// <param name="validationResult">The validation result to render.</param>
+        /// <returns>The rendered HTML report.</returns>
+        public static async Task<string> RenderValidationReportAsync(ValidationResult validationResult)
+        {
+            if (validationResult == null)
+            {
+                throw new ArgumentNullException(nameof(validationResult));
+            }
+
+            return await RenderValidationReportAsync(CreateLegacyReport(validationResult));
+        }
+
+        /// <summary>
+        /// Renders a structured KoSIT-style validation report as HTML.
+        /// </summary>
+        /// <param name="report">The structured validation report.</param>
+        /// <returns>The rendered HTML report.</returns>
+        public static async Task<string> RenderValidationReportAsync(ValidationReport report)
+        {
+            if (report == null)
+            {
+                throw new ArgumentNullException(nameof(report));
+            }
+
+            string templateContent = _LoadEmbeddedResource("ValidationReport.scriban");
+            var template = Template.Parse(templateContent);
+            var model = new
+            {
+                Report = report,
+                ErrorCount = report.Messages.Count(message => message.Level == "error"),
+                WarningCount = report.Messages.Count(message => message.Level == "warning"),
+                InformationCount = report.Messages.Count(message => message.Level == "information")
+            };
+
+            return await template.RenderAsync(model, memberRenamer: member => member.Name);
+        }
+
+        /// <summary>
+        /// Renders the validation result produced by the model validator as an HTML report.
+        /// </summary>
+        /// <param name="validationResult">The validation result to render.</param>
+        /// <returns>The rendered HTML report.</returns>
+        public static Task<string> RenderValidationReportAsync(ModelsValidationResult validationResult)
+        {
+            if (validationResult == null)
+            {
+                throw new ArgumentNullException(nameof(validationResult));
+            }
+
+            return RenderValidationReportAsync(CreateLegacyReport(new ValidationResult
+            {
+                IsValid = validationResult.IsValid,
+                Messages = validationResult.Messages
+            }));
+        }
+
+        private static ValidationReport CreateLegacyReport(ValidationResult validationResult)
+        {
+            var report = new ValidationReport { IsValid = validationResult.IsValid };
+            var step = new ValidationStepReport
+            {
+                Id = "val-legacy",
+                Name = "Legacy validation result",
+                IsValid = validationResult.IsValid
+            };
+
+            foreach (string message in validationResult.Messages ?? new List<string>())
+            {
+                step.Messages.Add(new ValidationMessage
+                {
+                    Id = $"val-legacy.{step.Messages.Count + 1}",
+                    Code = "UNSPECIFIC",
+                    Level = validationResult.IsValid ? "information" : "error",
+                    Text = message ?? string.Empty
+                });
+            }
+
+            report.Steps.Add(step);
+            return report;
+        }
 
 
         private static string _LoadEmbeddedResource(string resourceName)
@@ -56,8 +151,13 @@ namespace Esi.OpenEN16931.Html
             }
 
             using (var stream = assembly.GetManifestResourceStream(resourcePath))
-            using (var reader = new StreamReader(stream))
             {
+                if (stream == null)
+                {
+                    throw new FileNotFoundException($"The embedded resource '{resourceName}' was not found.");
+                }
+
+                using var reader = new StreamReader(stream);
                 return reader.ReadToEnd();
             }
         } // !_LoadEmbeddedResource()

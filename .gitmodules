@@ -1,10 +1,10 @@
-[submodule "origins/sashokfestival/DAXon"]
-path = origins/sashokfestival/DAXon
-url = https://github.com/ahSidata/DAXon.git
-
 [submodule "origins/stephanstapel/ZUGFeRD-csharp"]
 path = origins/stephanstapel/ZUGFeRD-csharp
 url = https://github.com/stephanstapel/ZUGFeRD-csharp.git
+
+[submodule "origins/sashokfestival/DAXon"]
+path = origins/sashokfestival/DAXon
+url = https://github.com/sidatacom/DAXon.git
 
 [submodule "origins/itplr-kosit/validator"]
 path = origins/itplr-kosit/validator
@@ -22,10 +22,6 @@ url = https://github.com/ConnectingEurope/eInvoicing-EN16931.git
 path = origins/gflohr/e-invoice-eu
 url = https://github.com/gflohr/e-invoice-eu.git
 
-[submodule "origins/klst-de/e-invoice"]
-path = origins/klst-de/e-invoice
-url = https://github.com/klst-de/e-invoice.git
-
 [submodule "origins/horstoeko/zugferd"]
 path = origins/horstoeko/zugferd
 url = https://github.com/horstoeko/zugferd.git
@@ -34,29 +30,13 @@ url = https://github.com/horstoeko/zugferd.git
 path = origins/easybill/e-invoicing
 url = https://github.com/easybill/e-invoicing.git
 
-[submodule "origins/josemmo/einvoicing"]
-path = origins/josemmo/einvoicing
-url = https://github.com/josemmo/einvoicing.git
-
-[submodule "origins/easybill/e-invoice-validator"]
-path = origins/easybill/e-invoice-validator
-url = https://github.com/easybill/e-invoice-validator.git
-
 [submodule "origins/phax/phase4"]
 path = origins/phax/phase4
 url = https://github.com/phax/phase4.git
 
-[submodule "origins/phax/phoss-smp"]
-path = origins/phax/phoss-smp
-url = https://github.com/phax/phoss-smp.git
-
 [submodule "origins/pretix/python-drafthorse"]
 path = origins/pretix/python-drafthorse
 url = https://github.com/pretix/python-drafthorse.git
-
-[submodule "origins/jcthiele/OpenXRechnungToolbox"]
-path = origins/jcthiele/OpenXRechnungToolbox
-url = https://github.com/jcthiele/OpenXRechnungToolbox.git
 
 [submodule "origins/atgp/factur-x"]
 path = origins/atgp/factur-x
@@ -82,21 +62,9 @@ url = https://github.com/phax/phase2.git
 path = origins/easybill/zugferd-php
 url = https://github.com/easybill/zugferd-php.git
 
-[submodule "origins/OpenIndex/ZUGFeRD-Manager"]
-path = origins/OpenIndex/ZUGFeRD-Manager
-url = https://github.com/OpenIndex/ZUGFeRD-Manager.git
-
 [submodule "origins/itplr-kosit/xrechnung-testsuite"]
 path = origins/itplr-kosit/xrechnung-testsuite
 url = https://github.com/itplr-kosit/xrechnung-testsuite.git
-
-[submodule "origins/tiehfood/xpferd"]
-path = origins/tiehfood/xpferd
-url = https://github.com/tiehfood/xpferd.git
-
-[submodule "origins/jslno/node-zugferd"]
-path = origins/jslno/node-zugferd
-url = https://github.com/jslno/node-zugferd.git
 
 [submodule "origins/itplr-kosit/xrechnung-schematron"]
 path = origins/itplr-kosit/xrechnung-schematron
@@ -114,41 +82,13 @@ url = https://github.com/phax/phive-rules.git
 path = origins/phax/peppol-commons
 url = https://github.com/phax/peppol-commons.git
 
-[submodule "origins/OxalisCommunity/oxalis"]
-path = origins/OxalisCommunity/oxalis
-url = https://github.com/OxalisCommunity/oxalis.git
-
-[submodule "origins/horstoeko/zugferd-laravel"]
-path = origins/horstoeko/zugferd-laravel
-url = https://github.com/horstoeko/zugferd-laravel.git
-
-[submodule "origins/phax/phoss-directory"]
-path = origins/phax/phoss-directory
-url = https://github.com/phax/phoss-directory.git
-
-[submodule "origins/horstoeko/zugferdvisualizer"]
-path = origins/horstoeko/zugferdvisualizer
-url = https://github.com/horstoeko/zugferdvisualizer.git
-
 [submodule "origins/LandrixSoftware/XRechnung-for-Delphi"]
 path = origins/LandrixSoftware/XRechnung-for-Delphi
 url = https://github.com/LandrixSoftware/XRechnung-for-Delphi.git
 
-[submodule "origins/recommand/recommand-peppol"]
-path = origins/recommand/recommand-peppol
-url = https://github.com/recommand/recommand-peppol.git
-
 [submodule "origins/phax/en16931-cii2ubl"]
 path = origins/phax/en16931-cii2ubl
 url = https://github.com/phax/en16931-cii2ubl.git
-
-[submodule "origins/ZUGFeRD/quba-viewer"]
-path = origins/ZUGFeRD/quba-viewer
-url = https://github.com/ZUGFeRD/quba-viewer.git
-
-[submodule "origins/bitbetterde/paperless-ngx-erechnung"]
-path = origins/bitbetterde/paperless-ngx-erechnung
-url = https://github.com/bitbetterde/paperless-ngx-erechnung.git
 
 [submodule "origins/zfutura/pycheval"]
 path = origins/zfutura/pycheval
@@ -162,10 +102,6 @@ url = https://github.com/digineo/xrechnung.git
 path = origins/horstoeko/zugferdublbridge
 url = https://github.com/horstoeko/zugferdublbridge.git
 
-[submodule "origins/drbrnn/XFakturist"]
-path = origins/drbrnn/XFakturist
-url = https://github.com/drbrnn/XFakturist.git
-
 [submodule "origins/stafyniaksacha/facturx"]
 path = origins/stafyniaksacha/facturx
 url = https://github.com/stafyniaksacha/facturx.git
@@ -173,10 +109,6 @@ url = https://github.com/stafyniaksacha/facturx.git
 [submodule "origins/speedata/einvoice"]
 path = origins/speedata/einvoice
 url = https://github.com/speedata/einvoice.git
-
-[submodule "origins/SimonWaldherr/InvoiceInspector"]
-path = origins/SimonWaldherr/InvoiceInspector
-url = https://github.com/SimonWaldherr/InvoiceInspector.git
 
 [submodule "origins/LandrixSoftware/validator-configuration-zugferd"]
 path = origins/LandrixSoftware/validator-configuration-zugferd
@@ -194,10 +126,6 @@ url = https://github.com/kyr0/easy-erechnung.git
 path = origins/koozala/pacioli
 url = https://github.com/koozala/pacioli.git
 
-[submodule "origins/horstoeko/zugferdmail"]
-path = origins/horstoeko/zugferdmail
-url = https://github.com/horstoeko/zugferdmail.git
-
 [submodule "origins/itplr-kosit/validator-configuration-bis"]
 path = origins/itplr-kosit/validator-configuration-bis
 url = https://github.com/itplr-kosit/validator-configuration-bis.git
@@ -210,10 +138,6 @@ url = https://github.com/austriapro/ebinterface-ubl-mapping.git
 path = origins/austriapro/ebinterface-xrechnung-mapping
 url = https://github.com/austriapro/ebinterface-xrechnung-mapping.git
 
-[submodule "origins/jcthiele/xrechnung-visualization-codelist-resolve"]
-path = origins/jcthiele/xrechnung-visualization-codelist-resolve
-url = https://github.com/jcthiele/xrechnung-visualization-codelist-resolve.git
-
 [submodule "origins/horstoeko/invoicesuite"]
 path = origins/horstoeko/invoicesuite
 url = https://github.com/horstoeko/invoicesuite.git
@@ -222,69 +146,17 @@ url = https://github.com/horstoeko/invoicesuite.git
 path = origins/InvoiceXML/facturx-api-examples
 url = https://github.com/InvoiceXML/facturx-api-examples.git
 
-[submodule "origins/AlexZeitler/zugpferd"]
-path = origins/AlexZeitler/zugpferd
-url = https://github.com/AlexZeitler/zugpferd.git
-
-[submodule "origins/Docentric/docentric-e-invoice-validator"]
-path = origins/Docentric/docentric-e-invoice-validator
-url = https://github.com/Docentric/docentric-e-invoice-validator.git
-
 [submodule "origins/Youniwemi/digital-invoice"]
 path = origins/Youniwemi/digital-invoice
 url = https://github.com/Youniwemi/digital-invoice.git
-
-[submodule "origins/holodeck-b2b/Holodeck-SMP"]
-path = origins/holodeck-b2b/Holodeck-SMP
-url = https://github.com/holodeck-b2b/Holodeck-SMP.git
-
-[submodule "origins/OxalisCommunity/vefa-peppol"]
-path = origins/OxalisCommunity/vefa-peppol
-url = https://github.com/OxalisCommunity/vefa-peppol.git
-
-[submodule "origins/vartur/facturelibre"]
-path = origins/vartur/facturelibre
-url = https://github.com/vartur/facturelibre.git
-
-[submodule "origins/pikaju/js-e-invoice-codes"]
-path = origins/pikaju/js-e-invoice-codes
-url = https://github.com/pikaju/js-e-invoice-codes.git
-
-[submodule "origins/hydrogen602/zugferd-code-lists"]
-path = origins/hydrogen602/zugferd-code-lists
-url = https://github.com/hydrogen602/zugferd-code-lists.git
-
-[submodule "origins/valitoolorg/zebra"]
-path = origins/valitoolorg/zebra
-url = https://github.com/valitoolorg/zebra.git
 
 [submodule "origins/easybill/en16931-validator"]
 path = origins/easybill/en16931-validator
 url = https://github.com/easybill/en16931-validator.git
 
-[submodule "origins/phax/en16931-registry"]
-path = origins/phax/en16931-registry
-url = https://github.com/phax/en16931-registry.git
-
-[submodule "origins/billingcat/crm"]
-path = origins/billingcat/crm
-url = https://github.com/billingcat/crm.git
-
-[submodule "origins/microscaler/rerp"]
-path = origins/microscaler/rerp
-url = https://github.com/microscaler/rerp.git
-
 [submodule "origins/NikolaiMe/factur-x-kit"]
 path = origins/NikolaiMe/factur-x-kit
 url = https://github.com/NikolaiMe/factur-x-kit.git
-
-[submodule "origins/Mavengence/einvoice-mcp"]
-path = origins/Mavengence/einvoice-mcp
-url = https://github.com/Mavengence/einvoice-mcp.git
-
-[submodule "origins/ipax77/pax.XRechnung.NET"]
-path = origins/ipax77/pax.XRechnung.NET
-url = https://github.com/ipax77/pax.XRechnung.NET.git
 
 [submodule "origins/ZUGFeRD/REST-Converter"]
 path = origins/ZUGFeRD/REST-Converter
@@ -294,10 +166,6 @@ url = https://github.com/ZUGFeRD/REST-Converter.git
 path = origins/mahdiabderraouf/facturx-php
 url = https://github.com/mahdiabderraouf/facturx-php.git
 
-[submodule "origins/stannapp/factur-x-php"]
-path = origins/stannapp/factur-x-php
-url = https://github.com/stannapp/factur-x-php.git
-
 [submodule "origins/LandrixSoftware/ZUGFeRD-for-Delphi"]
 path = origins/LandrixSoftware/ZUGFeRD-for-Delphi
 url = https://github.com/LandrixSoftware/ZUGFeRD-for-Delphi.git
@@ -305,22 +173,6 @@ url = https://github.com/LandrixSoftware/ZUGFeRD-for-Delphi.git
 [submodule "origins/facturx-engine/facturx-engine"]
 path = origins/facturx-engine/facturx-engine
 url = https://github.com/facturx-engine/facturx-engine.git
-
-[submodule "origins/e-invoice-eu"]
-path = origins/e-invoice-eu
-url = https://github.com/gflohr/e-invoice-eu.git
-
-[submodule "origins/e-invoice-validator-backoffice"]
-path = origins/e-invoice-validator-backoffice
-url = https://github.com/backoffice-plus/e-invoice-validator.git
-
-[submodule "origins/e-invoicing"]
-path = origins/e-invoicing
-url = https://github.com/easybill/e-invoicing.git
-
-[submodule "origins/eInvoicing-EN16931"]
-path = origins/eInvoicing-EN16931
-url = https://github.com/ConnectingEurope/eInvoicing-EN16931.git
 
 [submodule "origins/en16931-visualization"]
 path = origins/en16931-visualization
@@ -342,14 +194,42 @@ url = https://github.com/Securibox/facturx.git
 path = origins/mustangproject
 url = https://github.com/ZUGFeRD/mustangproject.git
 
-[submodule "origins/validator"]
-path = origins/validator
-url = https://github.com/itplr-kosit/validator.git
-
-[submodule "origins/validator-configuration-xrechnung"]
-path = origins/validator-configuration-xrechnung
-url = https://github.com/itplr-kosit/validator-configuration-xrechnung.git
-
 [submodule "origins/phax/phive-rules-foundations"]
 path = origins/phax/phive-rules-foundations
 url = https://github.com/phax/phive-rules-foundations.git
+[submodule "origins/italia/fatturapa-testsdi"]
+	path = origins/italia/fatturapa-testsdi
+	url = https://github.com/italia/fatturapa-testsdi.git
+[submodule "origins/italia/fatturapa-php-sdk"]
+	path = origins/italia/fatturapa-php-sdk
+	url = https://github.com/italia/fatturapa-php-sdk.git
+[submodule "origins/italia/fatturapa-python"]
+	path = origins/italia/fatturapa-python
+	url = https://github.com/italia/fatturapa-python.git
+[submodule "origins/deltazero-cz/node-isdoc"]
+	path = origins/deltazero-cz/node-isdoc
+	url = https://github.com/deltazero-cz/node-isdoc.git
+[submodule "origins/isdoc/isdoc.pdf"]
+	path = origins/isdoc/isdoc.pdf
+	url = https://github.com/isdoc/isdoc.pdf.git
+[submodule "origins/adawolfa/isdoc"]
+	path = origins/adawolfa/isdoc
+	url = https://github.com/adawolfa/isdoc.git
+[submodule "origins/codemasteroy/py-finvoice"]
+	path = origins/codemasteroy/py-finvoice
+	url = https://github.com/codemasteroy/py-finvoice.git
+[submodule "origins/samiljin/finvoice"]
+	path = origins/samiljin/finvoice
+	url = https://github.com/samiljin/finvoice.git
+[submodule "origins/thorgate/estonian_e_invoice"]
+	path = origins/thorgate/estonian_e_invoice
+	url = https://github.com/thorgate/estonian_e_invoice.git
+[submodule "origins/internetee/e_invoice"]
+	path = origins/internetee/e_invoice
+	url = https://github.com/internetee/e_invoice.git
+[submodule "origins/MPrtenjak/MNetESlog"]
+	path = origins/MPrtenjak/MNetESlog
+	url = https://github.com/MPrtenjak/MNetESlog.git
+[submodule "origins/ibistic/oioubl-schematron"]
+	path = origins/ibistic/oioubl-schematron
+	url = https://github.com/ibistic/oioubl-schematron.git

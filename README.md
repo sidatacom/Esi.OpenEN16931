@@ -29,134 +29,174 @@ Esi.OpenEN16931 is a community-driven collection of implementations, validators,
 
 The repository tracks upstream projects as git submodules, ships documentation and helper scripts (for example, to add submodules), and simplifies finding, comparing, and reusing existing solutions.
 
-## Extended ecosystem catalog — Submodules (105)
-This list is generated from the repository's `.gitmodules` file and reflects the repositories included as git submodules under the `origins/` directory. The current DAXon upgrade is temporarily sourced from the `ahSidata/DAXon` fork; the remaining upstream entries are presented in their existing catalog order.
-CURRENT WORKING FORK
-1. ahSidata/DAXon
+## Submodule catalog - 62 projects
 
-MASTER UPSTREAM PROJECT LIST (104)
-1. Securibox/facturx
-2. koozala/pacioli
-3. Docentric/docentric-e-invoice-validator
-4. BartVertongen/Peppol.NETCoreLib
-5. BartVertongen/UBL21.NETCoreLib
-6. itext/i7n-pdfinvoice
-7. ipax77/pax.XRechnung.NET
-8. stephanstapel/ZUGFeRD-csharp
-9. itplr-kosit/validator
-10. itplr-kosit/validator-configuration-xrechnung
-11. ConnectingEurope/eInvoicing-EN16931
-12. gflohr/e-invoice-eu
-13. akretion/factur-x
-14. alyf-de/eu_einvoice
-15. xSentry/xrechnungs-generator
-16. phax/en16931-visualization
-17. klst-de/e-invoice
-18. ZUGFeRD/mustangproject
-19. horstoeko/zugferd
-20. easybill/e-invoicing
-21. josemmo/einvoicing
-22. easybill/e-invoice-validator
-23. backoffice-plus/e-invoice-validator
-24. phax/phase4
-25. phax/phoss-smp
-26. pretix/python-drafthorse
-27. jcthiele/OpenXRechnungToolbox
-28. atgp/factur-x
-29. phax/ph-ubl
-30. num-num/ubl-invoice
-31. itplr-kosit/xrechnung-visualization
-32. phax/phase2
-33. easybill/zugferd-php
-34. OpenIndex/ZUGFeRD-Manager
-35. itplr-kosit/xrechnung-testsuite
-36. tiehfood/xpferd
-37. jslno/node-zugferd
-38. ZUGFeRD/corpus
-39. itplr-kosit/xrechnung-schematron
-40. phax/phive
-41. phax/phive-rules
-42. phax/peppol-commons
-43. OxalisCommunity/oxalis
-44. horstoeko/zugferd-laravel
-45. phax/phoss-directory
-46. horstoeko/zugferdvisualizer
-47. ZUGFeRD/ZUV
-48. LandrixSoftware/XRechnung-for-Delphi
-49. recommand/recommand-peppol
-50. phax/en16931-cii2ubl
-51. konik-io/konik
-52. ZUGFeRD/quba-viewer
-53. bitbetterde/paperless-ngx-erechnung
-54. zfutura/pycheval
-55. esvit/einvoicing
-56. digineo/xrechnung
-57. horstoeko/zugferdublbridge
-58. drbrnn/XFakturist
-59. stafyniaksacha/facturx
-60. lka/excel2zugferd
-61. speedata/einvoice
-62. SimonWaldherr/InvoiceInspector
-63. LandrixSoftware/validator-configuration-zugferd
-64. Tiime-Software/Factur-X
-65. kyr0/easy-erechnung
-66. horstoeko/zugferdmail
-67. itplr-kosit/validator-configuration-bis
-68. austriapro/ebinterface-standards
-69. austriapro/ebinterface-ubl-mapping
-70. austriapro/ebinterface-xrechnung-mapping
-71. jcthiele/xrechnung-visualization-codelist-resolve
-72. markusbegerow/zugpferd-xrechnung-peppol-generator
-73. horstoeko/invoicesuite
-74. InvoiceXML/facturx-api-examples
-75. AlexZeitler/zugpferd
-76. armin11/xrechnung_light
-77. Youniwemi/digital-invoice
-78. svanteschubert/Saxon-HE-enhanced-accuracy
-79. CenPC434/java-tools
-80. holodeck-b2b/Holodeck-SMP
-81. OxalisCommunity/vefa-peppol
-82. horstoeko/ubl
-83. Selia-AI/peppol-bis-3-typescript
-84. vartur/facturelibre
-85. pikaju/js-e-invoice-codes
-86. BSchneppe/einvoice-rs
-87. hydrogen602/zugferd-code-lists
-88. valitoolorg/zebra
-89. easybill/en16931-validator
-90. easybill/peppol-bis-billing-validator
-91. VartikaG02/en16931-ubl2cii
-92. phax/en16931-registry
-93. billingcat/crm
-94. microscaler/rerp
-95. NikolaiMe/factur-x-kit
-96. Mavengence/einvoice-mcp
-97. LASTRADA-Software/XRechnung
-98. inbridgeio/open-invoice-format
-99. ZUGFeRD/einvoice-anonymizer
-100. ZUGFeRD/REST-Converter
-101. mahdiabderraouf/facturx-php
-102. stannapp/factur-x-php
-103. LandrixSoftware/ZUGFeRD-for-Delphi
-104. facturx-engine/facturx-engine
+The country mapping below is the primary catalog view. It makes the relationship explicit for every country. Shared repositories are repeated on each applicable country row; they are not separate national implementations. `No country-specific submodule` means that the syntax or profile is documented, but this catalog does not currently contain a dedicated implementation for it.
 
-Next steps
-- The raw machine-readable list is `docs/external-projects-repos.txt` if you want to re-run or edit the list.
-- To add these projects as git submodules under `origins/`, run the helper script:
+| Country | Syntax/profile | Schemas, rules and test data | Codebases, validators and tools |
+|---------|----------------|------------------------------|----------------------------------|
+| Austria | `ebInterface`; UBL/Peppol | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | `phax/phive-rules-foundations` | `itplr-kosit/validator` |
+|  |  | `austriapro/ebinterface-ubl-mapping` | — |
+|  |  | `austriapro/ebinterface-xrechnung-mapping` | — |
+| Belgium | UBL 2.1; Peppol BIS / UBL.BE | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` (module `phive-rules-ublbe`) | `phax/ph-ubl` |
+| Bulgaria | UBL 2.1 and CII 16B/D16B | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | — | `phax/en16931-cii2ubl` |
+| Croatia | UBL 2.1 and CII 16B/D16B; Croatian CIUS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | — | `phax/en16931-cii2ubl` |
+| Cyprus | UBL 2.1; Peppol BIS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Czechia | ISDOC; UBL 2.1; EDIFACT | `phax/phive-rules-foundations` | `deltazero-cz/node-isdoc` |
+|  |  | — | `isdoc/isdoc.pdf` |
+|  |  | — | `adawolfa/isdoc` |
+|  |  | — | `itplr-kosit/validator` |
+|  |  | — | `phax/ph-ubl` |
+| Denmark | OIOUBL; UBL 2.1; Peppol BIS | `ibistic/oioubl-schematron` | `itplr-kosit/validator` |
+|  |  | `ConnectingEurope/eInvoicing-EN16931` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Estonia | UBL 2.1; national XML option | `ConnectingEurope/eInvoicing-EN16931` | `thorgate/estonian_e_invoice` |
+|  |  | `phax/phive-rules` | `internetee/e_invoice` |
+|  |  | — | `itplr-kosit/validator` |
+| Finland | Finvoice; TEAPPSXML; UBL 2.1 and CII 16B/D16B | `phax/phive-rules-foundations` | `codemasteroy/py-finvoice` |
+|  |  | `ConnectingEurope/eInvoicing-EN16931` | `samiljin/finvoice` |
+|  |  | `phax/phive-rules` | `phax/en16931-cii2ubl` |
+|  |  | — | `itplr-kosit/validator` |
+| France | French CIUS over UBL/CII; Factur-X | `atgp/factur-x` | `mahdiabderraouf/facturx-php` |
+|  |  | `Tiime-Software/Factur-X` | `facturx` |
+|  |  | `ConnectingEurope/eInvoicing-EN16931` | `factur-x` |
+|  |  | `phax/phive-rules` | `phax/en16931-cii2ubl` |
+| Germany | XRechnung over UBL/CII; Factur-X/ZUGFeRD | `itplr-kosit/validator-configuration-xrechnung` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/xrechnung-testsuite` | `stephanstapel/ZUGFeRD-csharp` |
+|  |  | `itplr-kosit/xrechnung-schematron` | `horstoeko/zugferd` |
+|  |  | `LandrixSoftware/validator-configuration-zugferd` | `easybill/e-invoicing` |
+|  |  | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/xrechnung-visualization` |
+|  |  | — | `easybill/zugferd-php` |
+|  |  | — | `LandrixSoftware/XRechnung-for-Delphi` |
+|  |  | — | `zfutura/pycheval` |
+|  |  | — | `digineo/xrechnung` |
+|  |  | — | `horstoeko/zugferdublbridge` |
+|  |  | — | `kyr0/easy-erechnung` |
+|  |  | — | `koozala/pacioli` |
+|  |  | — | `horstoeko/invoicesuite` |
+|  |  | — | `easybill/en16931-validator` |
+|  |  | — | `NikolaiMe/factur-x-kit` |
+|  |  | — | `LandrixSoftware/ZUGFeRD-for-Delphi` |
+|  |  | — | `mustangproject` |
+|  |  | — | `gflohr/e-invoice-eu` |
+|  |  | — | `pretix/python-drafthorse` |
+|  |  | — | `ZUGFeRD/REST-Converter` |
+|  |  | — | `eu_einvoice` |
+| Greece | UBL 2.1; Peppol BIS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Hungary | UBL 2.1; Peppol/exchange options; NAV XML reporting | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Ireland | UBL 2.1 and CII 16B/D16B; Peppol BIS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | — | `phax/en16931-cii2ubl` |
+| Italy | FatturaPA | `phax/phive-rules-foundations` | `italia/fatturapa-testsdi` |
+|  |  | — | `italia/fatturapa-php-sdk` |
+|  |  | — | `italia/fatturapa-python` |
+| Latvia | UBL 2.1; EN 16931/Peppol | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Lithuania | UBL 2.1; EN 16931/Peppol; SABIS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Luxembourg | UBL 2.1 and CII 16B/D16B; Peppol BIS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | — | `phax/en16931-cii2ubl` |
+| Malta | UBL 2.1; Peppol BIS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Netherlands | UBL 2.1; NLCIUS, UBL-OHNL and SI-UBL | `ibistic/oioubl-schematron` | `itplr-kosit/validator` |
+|  |  | `ConnectingEurope/eInvoicing-EN16931` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Poland | UBL 2.1; Peppol Polish extensions; KSeF/PEF | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| Portugal | UBL 2.1 and CII 16B/D16B; CIUS-PT | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | — | `phax/en16931-cii2ubl` |
+| Romania | UBL 2.1 and CII 16B/D16B; RO_CIUS | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | — | `phax/en16931-cii2ubl` |
+| Slovakia | UBL 2.1 and CII 16B/D16B; Peppol | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+|  |  | — | `phax/en16931-cii2ubl` |
+| Slovenia | e-SLOG; UBL 2.1; EN 16931/Peppol | `phax/phive-rules` | `MPrtenjak/MNetESlog` |
+|  |  | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | — | `phax/phase4` |
+|  |  | — | `phax/ph-ubl` |
+| Spain | Facturae | `phax/phive-rules-foundations` | `itplr-kosit/validator` |
+|  |  | — | `phax/ph-ubl` |
+| Sweden | UBL 2.1; Peppol BIS; SFTI guidance | `ConnectingEurope/eInvoicing-EN16931` | `itplr-kosit/validator` |
+|  |  | `itplr-kosit/validator-configuration-bis` | `phax/phase4` |
+|  |  | `phax/phive-rules` | `phax/ph-ubl` |
+| International / multi-country | Cross-border Factur-X, EN 16931, UBL and CII tooling | `ConnectingEurope/eInvoicing-EN16931` | `sashokfestival/DAXon` |
+|  |  | `phax/phive-rules` | `num-num/ubl-invoice` |
+|  |  | `phax/phive-rules-foundations` | `phax/phase2` |
+|  |  | — | `phax/phive` |
+|  |  | — | `phax/peppol-commons` |
+|  |  | — | `stafyniaksacha/facturx` |
+|  |  | — | `speedata/einvoice` |
+|  |  | — | `InvoiceXML/facturx-api-examples` |
+|  |  | — | `Youniwemi/digital-invoice` |
+|  |  | — | `facturx-engine/facturx-engine` |
+|  |  | — | `en16931-visualization` |
+|  |  | — | `phax/en16931-cii2ubl` |
 
-```powershell
-.\scripts\add_submodules.ps1 -Commit
-```
+The repository catalog above contains each configured submodule exactly once.
 
-The script will attempt shallow clones first and fall back to a full clone when necessary. If any repositories fail to add, the script will list them for manual retry.
+## Validation
 
-## Documentation & Country Profiles
+The validation model separates the EN 16931 semantic model, the invoice syntax, profile-specific rules, containers and transport. These layers must not be treated as interchangeable invoice types.
 
-We maintain per-country documentation under [docs/countries/](docs/countries/). The structure is intended to scale to all European countries, with the first country folders created for Germany and Austria.
+| Layer | Meaning | Examples |
+|-------|---------|----------|
+| Semantic model | Business terms, groups, cardinalities and core rules | EN 16931, `BT-*` |
+| Syntax | XML or EDI representation of the invoice | UBL 2.1, UN/CEFACT CII 16B/D16B |
+| Profile and rules | Constraints applied to the semantic model and syntax | XRechnung, Peppol BIS Billing 3.0, CIUS |
+| Container | Packaging of readable and structured invoice data | PDF/A-3 with embedded CII, Factur-X/ZUGFeRD |
+| Transport and exchange | Delivery, reporting or clearance channel | Peppol eDelivery, SDI, KSeF, FACe, national portals |
 
-See [docs/countries/README.md](docs/countries/README.md) for the full country index and rollout plan.
+A Peppol BIS invoice is an EN 16931 invoice serialized as UBL and validated with Peppol rules. Factur-X and ZUGFeRD are PDF/A-3 containers with embedded CII; they are not additional XML syntaxes. `UBL` and `CII` therefore identify the syntax, while the selected profile determines the applicable rules.
 
----
+### Syntax families and country qualification
+
+| Syntax family | Countries or documented use | Project API status |
+|---------------|----------------------------|--------------------|
+| **UBL 2.1** | Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia and Sweden | Exposed as `UBL` |
+| **UN/CEFACT CII 16B/D16B** | Bulgaria, Croatia, Finland, France, Germany, Ireland, Luxembourg, Portugal, Romania and Slovakia | Exposed as `CII` |
+| **ebInterface** | Austria | Not exposed as a separate syntax |
+| **Finvoice 3.0 / TEAPPSXML 3.0** | Finland | Not exposed as separate syntaxes |
+| **ISDOC** | Czechia | Not exposed as a separate syntax |
+| **EDIFACT** | Czechia and legacy/interoperability scenarios | Not exposed as a separate syntax |
+| **FatturaPA** | Italy | Not exposed as a separate syntax |
+| **Facturae** | Spain | Not exposed as a separate syntax |
+| **e-SLOG 2.0** | Slovenia | Not exposed as a separate syntax |
+| **Estonian national XML** | Estonia; the cited inventory does not name one single vocabulary | Not exposed as a separate syntax |
+
+The following are profiles or rule layers, not additional syntax families: Peppol BIS Billing 3.0, OIOUBL, XRechnung, French CIUS, Croatian CIUS, NLCIUS, UBL-OHNL, SI-UBL, CIUS-PT, RO_CIUS and Polish Peppol extensions. `NAV XML` and `KSeF XML` are reporting or platform schemas. Factur-X/ZUGFeRD is a PDF/A-3 container with embedded CII.
+
+### Validation evidence and scope
+
+The detailed validation evidence, country-specific qualification and validation pipeline are maintained in [VALIDATION.md](VALIDATION.md).
+
+
 
 ## License
 

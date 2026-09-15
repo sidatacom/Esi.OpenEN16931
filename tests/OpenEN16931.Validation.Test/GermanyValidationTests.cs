@@ -170,7 +170,10 @@ public sealed class GermanyValidationTests
         string[] mutationFiles = Directory.GetFiles(mutationRoot, "*.xml", SearchOption.TopDirectoryOnly);
         var failures = new List<string>();
         var mutationReports = new List<ValidationReport>();
+        var invalidMutationReports = new List<ValidationReport>();
         int generatedVariants = 0;
+        int validVariants = 0;
+        int invalidVariants = 0;
 
         foreach (string mutationFile in mutationFiles.OrderBy(path => path, StringComparer.OrdinalIgnoreCase))
         {
@@ -221,8 +224,18 @@ public sealed class GermanyValidationTests
                         .Select(element => NormalizeRuleCode(element.GetAttribute("id")))
                         .ToHashSet(StringComparer.OrdinalIgnoreCase);
                     bool isExpectedInvalid = expectedAttribute == "schematron-invalid";
+                    if (isExpectedInvalid)
+                    {
+                        invalidVariants++;
+                        invalidMutationReports.Add(mutationReport);
+                    }
+                    else
+                    {
+                        validVariants++;
+                    }
+
                     bool matches = isExpectedInvalid
-                        ? expectedCodes.All(failedCodes.Contains)
+                        ? expectedCodes.Length > 0 && failedCodes.Count > 0 && expectedCodes.All(failedCodes.Contains)
                         : expectedCodes.All(expectedCode => !failedCodes.Contains(expectedCode));
 
                     if (!matches)
@@ -260,8 +273,29 @@ public sealed class GermanyValidationTests
         File.WriteAllText(Path.Combine(reportDirectory, "KoSIT-CEN-Mutation-RegressionReport.html"), reportHtml);
         File.WriteAllBytes(Path.Combine(reportDirectory, "KoSIT-CEN-Mutation-RegressionReport.pdf"), reportPdf);
 
+        var invalidAggregateReport = new ValidationReport
+        {
+            DocumentReference = "KoSIT CEN invalid mutation regression suite",
+            DocumentType = $"{invalidVariants} generated invalid mutation variants",
+            IsValid = false
+        };
+        foreach (ValidationReport mutationReport in invalidMutationReports)
+        {
+            foreach (ValidationStepReport step in mutationReport.Steps)
+            {
+                invalidAggregateReport.Steps.Add(step);
+            }
+        }
+
+        string invalidReportHtml = await InvoiceDescriptorHtmlRenderer.RenderValidationReportAsync(invalidAggregateReport);
+        byte[] invalidReportPdf = ValidationReportPdfRenderer.Render(invalidAggregateReport);
+        File.WriteAllText(Path.Combine(reportDirectory, "KoSIT-CEN-Invalid-MutationReport.html"), invalidReportHtml);
+        File.WriteAllBytes(Path.Combine(reportDirectory, "KoSIT-CEN-Invalid-MutationReport.pdf"), invalidReportPdf);
+
         Assert.AreEqual(0, failures.Count, string.Join(Environment.NewLine, failures));
         Assert.IsGreaterThan(0, generatedVariants);
+        Assert.IsGreaterThan(0, validVariants);
+        Assert.IsGreaterThan(0, invalidVariants);
     }
 
     private static void AssertValid(string invoiceRelativePath, string stylesheetRelativePath)

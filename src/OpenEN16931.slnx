@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Frameworks/">
+    <Project Path="../../Telerik/Frameworks/Telerik.Licensing/Telerik.Licensing.csproj" />
+    <Project Path="../../Telerik/Frameworks/Telerik.Licensing.Tasks/Telerik.Licensing.Tasks.csproj" />
+  </Folder>
   <Folder Name="/Projektmappenelemente/">
     <File Path="../README.md" />
   </Folder>

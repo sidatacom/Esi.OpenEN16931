@@ -45,7 +45,6 @@
 		<PackageReference Include="Scriban" Version="7.4.0" />
 		<PackageReference Include="EPPlus" Version="8.7.0" />
 		<PackageReference Include="PDFsharp-extended" Version="1.4.0" />
-		<PackageReference Include="ZUGFeRD-csharp" Version="18.0.0" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Validation\Sources\Germany\Syntax\CII\Schematrons\" />

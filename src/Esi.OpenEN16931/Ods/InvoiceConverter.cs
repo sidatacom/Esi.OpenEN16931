@@ -17,7 +17,7 @@
  * under the License.
  */
 using OfficeOpenXml;
-using Esi.OpenEN16931.Core;
+using Esi.OpenEN16931.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;

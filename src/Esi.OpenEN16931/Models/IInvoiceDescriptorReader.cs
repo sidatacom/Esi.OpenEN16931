@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Esi.OpenEN16931.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;

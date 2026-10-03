@@ -18,7 +18,7 @@
  */
 
 
-using s2industries.ZUGFeRD;
+
 using System.ComponentModel;
 
 

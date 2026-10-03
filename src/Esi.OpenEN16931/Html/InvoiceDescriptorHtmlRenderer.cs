@@ -24,6 +24,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Esi.OpenEN16931.Core;
+using InvoiceDescriptor = Esi.OpenEN16931.Models.InvoiceDescriptor;
 using ModelsValidationResult = Esi.OpenEN16931.Models.ValidationResult;
 using Scriban;
 
@@ -59,7 +60,7 @@ namespace Esi.OpenEN16931.Html
         /// </summary>
         /// <param name="validationResult">The validation result to render.</param>
         /// <returns>The rendered HTML report.</returns>
-        public static async Task<string> RenderValidationReportAsync(ValidationResult validationResult)
+        public static async Task<string> RenderValidationReportAsync(ModelsValidationResult validationResult)
         {
             if (validationResult == null)
             {
@@ -94,26 +95,7 @@ namespace Esi.OpenEN16931.Html
             return await template.RenderAsync(model, memberRenamer: member => member.Name);
         }
 
-        /// <summary>
-        /// Renders the validation result produced by the model validator as an HTML report.
-        /// </summary>
-        /// <param name="validationResult">The validation result to render.</param>
-        /// <returns>The rendered HTML report.</returns>
-        public static Task<string> RenderValidationReportAsync(ModelsValidationResult validationResult)
-        {
-            if (validationResult == null)
-            {
-                throw new ArgumentNullException(nameof(validationResult));
-            }
-
-            return RenderValidationReportAsync(CreateLegacyReport(new ValidationResult
-            {
-                IsValid = validationResult.IsValid,
-                Messages = validationResult.Messages
-            }));
-        }
-
-        private static ValidationReport CreateLegacyReport(ValidationResult validationResult)
+        private static ValidationReport CreateLegacyReport(ModelsValidationResult validationResult)
         {
             var report = new ValidationReport { IsValid = validationResult.IsValid };
             var step = new ValidationStepReport

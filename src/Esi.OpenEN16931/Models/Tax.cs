@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using s2industries.ZUGFeRD;
+
 using System;
 using System.ComponentModel;
 using System.Drawing;

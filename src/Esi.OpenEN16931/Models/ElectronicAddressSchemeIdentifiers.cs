@@ -17,7 +17,7 @@
  * under the License.
  */
 
-using s2industries.ZUGFeRD;
+
 using System;
 
 namespace Esi.OpenEN16931.Models

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Esi.OpenEN16931.Core;
+using Esi.OpenEN16931.Models;
 using Esi.OpenEN16931.Html;
 using System.Linq;
 using System.Threading.Tasks;

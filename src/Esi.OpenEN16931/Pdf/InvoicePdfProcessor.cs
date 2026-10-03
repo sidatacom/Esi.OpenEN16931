@@ -30,7 +30,7 @@ using PdfSharp.Diagnostics;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.Advanced;
 using PdfSharp.Pdf.IO;
-using Esi.OpenEN16931.Core;
+using Esi.OpenEN16931.Models;
 using static PdfSharp.Pdf.PdfDictionary;
 
 namespace Esi.OpenEN16931.PDF

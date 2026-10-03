@@ -17,7 +17,6 @@
  * under the License.
  */
 using Esi.OpenEN16931;
-using Esi.OpenEN16931.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;

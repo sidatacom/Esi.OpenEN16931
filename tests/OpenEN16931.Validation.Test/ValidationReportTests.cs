@@ -3,6 +3,7 @@ using System.Xml;
 using Esi.OpenEN16931.Core;
 using Esi.OpenEN16931.Html;
 using Esi.OpenEN16931.PDF;
+using ValidationResult = Esi.OpenEN16931.Models.ValidationResult;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Esi.OpenEN16931.Validation.Test;

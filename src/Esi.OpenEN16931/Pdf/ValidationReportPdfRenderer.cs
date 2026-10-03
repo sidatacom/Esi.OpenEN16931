@@ -27,7 +27,7 @@ public static class ValidationReportPdfRenderer
     /// </summary>
     /// <param name="validationResult">The validation result to render.</param>
     /// <returns>The generated PDF bytes.</returns>
-    public static byte[] Render(ValidationResult validationResult)
+    public static byte[] Render(ModelsValidationResult validationResult)
     {
         if (validationResult == null)
         {
@@ -149,30 +149,11 @@ public static class ValidationReportPdfRenderer
     }
 
     /// <summary>
-    /// Renders the validation result produced by the model validator to a PDF byte array.
-    /// </summary>
-    /// <param name="validationResult">The validation result to render.</param>
-    /// <returns>The generated PDF bytes.</returns>
-    public static byte[] Render(ModelsValidationResult validationResult)
-    {
-        if (validationResult == null)
-        {
-            throw new ArgumentNullException(nameof(validationResult));
-        }
-
-        return Render(new ValidationResult
-        {
-            IsValid = validationResult.IsValid,
-            Messages = validationResult.Messages
-        });
-    }
-
-    /// <summary>
     /// Renders a validation result asynchronously to a PDF byte array.
     /// </summary>
     /// <param name="validationResult">The validation result to render.</param>
     /// <returns>The generated PDF bytes.</returns>
-    public static Task<byte[]> RenderAsync(ValidationResult validationResult)
+    public static Task<byte[]> RenderAsync(ModelsValidationResult validationResult)
     {
         return Task.FromResult(Render(validationResult));
     }
@@ -186,21 +167,11 @@ public static class ValidationReportPdfRenderer
     }
 
     /// <summary>
-    /// Renders the model validator result asynchronously to a PDF byte array.
-    /// </summary>
-    /// <param name="validationResult">The validation result to render.</param>
-    /// <returns>The generated PDF bytes.</returns>
-    public static Task<byte[]> RenderAsync(ModelsValidationResult validationResult)
-    {
-        return Task.FromResult(Render(validationResult));
-    }
-
-    /// <summary>
     /// Writes a validation report to a PDF file.
     /// </summary>
     /// <param name="targetPath">The destination PDF path.</param>
     /// <param name="validationResult">The validation result to render.</param>
-    public static void Save(string targetPath, ValidationResult validationResult)
+    public static void Save(string targetPath, ModelsValidationResult validationResult)
     {
         if (string.IsNullOrWhiteSpace(targetPath))
         {
@@ -221,21 +192,6 @@ public static class ValidationReportPdfRenderer
         }
 
         File.WriteAllBytes(targetPath, Render(report));
-    }
-
-    /// <summary>
-    /// Writes the model validator result to a PDF file.
-    /// </summary>
-    /// <param name="targetPath">The destination PDF path.</param>
-    /// <param name="validationResult">The validation result to render.</param>
-    public static void Save(string targetPath, ModelsValidationResult validationResult)
-    {
-        if (string.IsNullOrWhiteSpace(targetPath))
-        {
-            throw new ArgumentException("A target path is required.", nameof(targetPath));
-        }
-
-        File.WriteAllBytes(targetPath, Render(validationResult));
     }
 
     private static string[] Wrap(string value, XFont font, XGraphics graphics, double width)

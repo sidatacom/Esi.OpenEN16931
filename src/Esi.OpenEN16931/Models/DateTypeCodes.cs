@@ -17,7 +17,7 @@
  * under the License.
  */
 
-using s2industries.ZUGFeRD;
+
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
